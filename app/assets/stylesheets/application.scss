@@ -10,14 +10,20 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *
  *= require_self
  */
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
 
 // overide materialize color scheme
-@import "components/variables";
+@import "base/var";
+
+@import "base/navbar";
+
 @import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700";
 
 
-@import "components/navbar";
+@import "base/components";
+@import "base/layout";
