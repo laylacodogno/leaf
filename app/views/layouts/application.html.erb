@@ -6,20 +6,17 @@
     <%= favicon_link_tag 'favicon.ico' %>
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
       <ul id="nav-user" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
+        <li><a href="#!">Login</a></li>
       </ul>
-      <nav class="nav-extended">
-        <div class="nav-wrapper container nav-primary" >
+      <nav class="nav-primary">
+        <div class="nav-wrapper container" >
           <a href="#" class="brand-logo"></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down navbar-links">
             <li>
@@ -27,12 +24,21 @@
                 <div class="input-field col s12">
                   <input id="search" type="search" required>
                 </div>
-                <button class="btn-search" type="submit" name="action"></button>                
+                <button class="btn-search" type="submit" name="action"></button>
               </form>
             </li>
             <li>
               <a class="dropdown-button link-dropdown" href="#!" data-activates="nav-user"><i class="ic-user"></i></a>
             </li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="nav-secondary">
+        <div class="nav-wrapper container">
+          <ul class="left hide-on-med-and-down navbar-links">
+            <li><a  href="sass.html" class="primary-link">Sass</a></li>
+            <li><a href="badges.html" class="primary-link">Components</a></li>
+            <li><a href="collapsible.html" class="primary-link">JavaScript</a></li>
           </ul>
         </div>
       </nav>
