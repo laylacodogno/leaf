@@ -1,10 +1,10 @@
 nav.nav-primary{
-  background-image: url(pattern_amelia.jpg);
+  background-image: image-url("pattern_amelia.jpg");
   .nav-wrapper{
     >.brand-logo{
       height: 44px;
       width: 220px;
-      background-image: url(ic-logo-leaf-background2.png);
+      background-image: image-url("ic-logo-leaf-background2.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -35,7 +35,7 @@ nav.nav-primary{
             text-indent: 20px;
           }
           .btn-search{
-            background-image: url(bttn-search.png);
+            background-image: image-url("bttn-search.png");
             background-repeat: no-repeat;
             background-position-x: right;
             background-size: contain;
@@ -57,7 +57,7 @@ nav.nav-primary{
             display: block;
             width: 35px;
             margin: 0 auto;
-            background-image: url(ic-user.png);
+            background-image: image-url("ic-user.png");
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
