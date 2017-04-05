@@ -1,9 +1,20 @@
 <div class="container">
-  <h1>Editing User</h1>
+  <div class="row user">
+    <h2 class="s12 page-title">Editar Usuário</h2>
 
-  <%= render 'form', user: @user %>
+    <div class="notice-container">
+      <p id="notice"><%= notice %></p>
+    </div>
 
-  <%= link_to 'Show', @user %> |
-  <%= link_to 'Back', users_path %>
+      <%= render 'form', user: @user %>
 
+
+
+      <div class="card-action">
+        <%= link_to 'Show', @user, class: 'waves-effect btn-flat primary-btn'  %>
+        <%= link_to 'Back', users_path, class: 'waves-effect btn-flat primary-btn'  %>
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -32,10 +32,9 @@ input[type=tel],
 input[type=number],
 input[type=search],
 textarea.materialize-textarea{
-  height: 20px;
-  max-height: 30px;
-  font-size: 14px;
-  padding: 3px 15px;
+  // height: 20px;
+  // max-height: 30px;
+  // font-size: 14px;
 
   &:focus{
     box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
