@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20170403233736) do
     t.string   "email",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "state"
     t.string   "login",      null: false
+    t.integer  "state"
   end
 
 end
