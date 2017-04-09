@@ -17,7 +17,7 @@
       </ul>
       <nav class="nav-primary">
         <div class="nav-wrapper container" >
-          <a href="#" class="brand-logo"></a>
+          <%= link_to '', root_path, class: 'brand-logo' %>
           <ul id="nav-mobile" class="right hide-on-med-and-down navbar-links">
             <li>
               <form class="row navbar-search">
@@ -36,7 +36,7 @@
       <nav class="nav-secondary">
         <div class="nav-wrapper container">
           <ul class="left hide-on-med-and-down navbar-links">
-            <li><a  href="#" class="primary-link">menu 1</a></li>
+            <li><%= link_to 'Usuários', users_path, class: 'primary-link' %></li>
             <li><a href="#" class="primary-link">menu 2</a></li>
             <li><a href="#" class="primary-link">menu 3</a></li>
           </ul>
