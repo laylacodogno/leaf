@@ -1,5 +1,23 @@
-a.primary-link{
+[class*="danger-"]{
+  color: $error-color;
+}
+[class*="sucess-"]{
+  color: $success-color;
+}
+[class*="primary-"]{
   color: $primary-color;
+}
+[class*="secondary-"]{
+  color: $secondary-color;
+}
+
+.btn-action{
+  margin-right: 24px;
+  transition: color .3s ease;
+  text-transform: uppercase;
+}
+
+.primary-link{
   font-family: $primary-font-family;
   text-transform: uppercase;
   color: #b8c0c3;
@@ -9,15 +27,13 @@ a.primary-link{
     border-bottom: 2px solid $primary-color;
   }
 }
-a.secondary-link{
-  color: $secondary-color;
+.secondary-link{
   font-family: $primary-font-family;
   &:active, &:hover, &:focus{
     color: #b8c0c3;
     background-color: transparent;
   }
 }
-
 
 input:not([type]),
 input[type=text],
@@ -53,16 +69,21 @@ textarea.materialize-textarea{
   }
 }
 
-.primary-card{
+
+.card{
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px #ffffff;
-  // background-image: image-url('pattern_card.png');
-  // background-position: top left;
-  // background-repeat: repeat-y;
-  // background-size: contain;
-
+  .card-action{
+    > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+      @extend .btn-action;
+    }
+    input[type=submit]{
+      @extend .btn-action;
+      @extend .btn;
+    }
+  }
   .card-title{
     font-family: $primary-font-family;
     font-size: 16px;
@@ -72,11 +93,27 @@ textarea.materialize-textarea{
     letter-spacing: normal;
     color: #696e6f;
   }
-}
-.card-large{
-  padding: 15px;
-}
 
+  &.card-large{
+    padding: 15px;
+  }
+
+  &.card-medium{
+
+  }
+  &.card-small{
+
+  }
+}
+table{
+  tr{
+    td{
+      .btn-action{
+        font-size: 11px;
+      }
+    }
+  }
+}
 .img-container{
   background-color: white;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);

@@ -9,15 +9,14 @@
   .notice-container{
 
   }
-  >.card.card-large{
+  .card.card-large{
     >.card-action{
-      >a.btn-flat.primary-btn{
-        color: $primary-color;
+      > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).danger-btn{
+        color: $error-color;
+        &:hover{
+          color: $error-color-light;
+        }
       }
-    }
-    .form-actions{
-      text-align: right;
-      margin: 10px 2px;
     }
   }
 }

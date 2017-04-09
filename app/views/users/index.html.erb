@@ -7,7 +7,7 @@
       <p id="notice"><%= notice %></p>
     </div>
 
-    <div class="s12 card primary-card card-large">
+    <div class="s12 card card-large">
 
       <table id="table-user">
         <thead>
@@ -23,15 +23,15 @@
             <tr>
               <td><%= user.name %></td>
               <td><%= user.email %></td>
-              <td><%= link_to 'Show', user, class: 'waves-effect waves-teal btn-flat' %></td>
-              <td><%= link_to 'Edit', edit_user_path(user), class: 'waves-effect waves-teal btn-flat' %></td>
-              <td><%= link_to 'Destroy', user, class: 'waves-effect waves-teal btn-flat', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Perfil', user, class: 'btn-action primary-btn' %></td>
+              <td><%= link_to 'Editar', edit_user_path(user), class: 'btn-action primary-btn' %></td>
+              <td><%= link_to 'Excluir', user, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <div class="card-action">
-        <%= link_to 'New User', new_user_path, class: 'waves-effect waves-teal btn-flat primary-btn' %>
+      <div class="card-action right-align">
+        <%= link_to 'Novo Usuário', new_user_path, class: 'primary-btn' %>
       </div>
 
     </div>

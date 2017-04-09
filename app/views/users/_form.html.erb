@@ -1,4 +1,6 @@
 <%= form_for(user) do |f| %>
+<div class="s12 card card-large">
+
   <% if user.errors.any? %>
     <div id="error_explanation">
       <p><%= pluralize(user.errors.count, "erro") %> prohibited this user from being saved:</p>
@@ -28,7 +30,13 @@
     </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit class: 'waves-effect btn secondary-btn' %>
+  <div class="card-action">
+    <%= link_to 'Voltar', users_path  %>
+    <% if @user.id.present? %>
+      <%= link_to 'Excluir', user, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= f.submit 'Salvar', class: 'right sucess-btn' %>
+
   </div>
+</div>
 <% end %>
