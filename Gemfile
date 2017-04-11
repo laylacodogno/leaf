@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Materialize Sass
 gem 'materialize-sass'
 
+# Gravatar Connection
+gem 'gravtastic'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
