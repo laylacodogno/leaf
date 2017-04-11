@@ -1,17 +1,29 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <div class="row user">
+    <h1 class="s12 page-title">Users</h1>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
+    <div class="notice-container">
+      <p id="notice"><%= notice %></p>
+    </div>
 
-  <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </p>
+    <div class="s12 card card-large">
+      <div class="user-info">
+        <p>
+          <strong>Name:</strong>
+          <%= @user.name %>
+        </p>
 
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path %>
+        <p>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </p>
+      </div>
 
+      <div class="card-action">
+        <%= link_to 'Voltar', users_path, class: 'primary-btn' %>
+        <%= link_to 'Editar', edit_user_path(@user), class: 'primary-btn' %>
+      </div>
+
+    </div>
+  </div>
 </div>

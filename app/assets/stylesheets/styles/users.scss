@@ -1,0 +1,22 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user{
+  .page-title{
+
+  }
+  .notice-container{
+
+  }
+  .card.card-large{
+    >.card-action{
+      > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).danger-btn{
+        color: $error-color;
+        &:hover{
+          color: $error-color-light;
+        }
+      }
+    }
+  }
+}

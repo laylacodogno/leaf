@@ -5,12 +5,16 @@ $primary-color: #f9c46c;
 $secondary-color: #2cc614;
 $gray-special-color: #e3b05c;
 
+$error-color: #F44336;
+$error-color-light: lighten($error-color, 20%);
+
+
 $navbar-height: 45px;
 
 $button-height: 26px;
 $button-radius: 50px;
 
-$card-link-color: $secondary-color;
+$card-link-color: $primary-color;
 
 $input-border-color: $gray-special-color;
 $input-focus-color: $primary-color;
