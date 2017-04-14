@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ingredients
   resources :users
   root :to => "home#index"
 
