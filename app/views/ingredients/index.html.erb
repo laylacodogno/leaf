@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row ingredient">
+    <h1 class="s12 page-title">Ingredientes</h1>
+
+    <div class="notice-container">
+      <p id="notice"><%= notice %></p>
+    </div>
+
+    <div class="s12 card card-large">
+      <table id="table-user">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @ingredients.each do |ingredient| %>
+            <tr>
+              <td><%= ingredient.name %></td>
+              <td class="taction"><%= link_to 'Editar', edit_ingredient_path(ingredient), class: 'btn-action primary-btn' %></td>
+              <td class="taction"><%= link_to 'Excluir', ingredient, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+      <div class="card-action right-align">
+        <%= link_to 'Novo Ingrediente', new_ingredient_path, class: 'primary-btn' %>
+      </div>
+
+    </div>
+  </div>
+</div>
