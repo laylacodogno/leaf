@@ -22,9 +22,9 @@
             <tr>
               <td><%= user.name %></td>
               <td><%= user.email %></td>
-              <td><%= link_to 'Perfil', user, class: 'btn-action primary-btn' %></td>
-              <td><%= link_to 'Editar', edit_user_path(user), class: 'btn-action primary-btn' %></td>
-              <td><%= link_to 'Excluir', user, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="taction"><%= link_to 'Perfil', user, class: 'btn-action primary-btn' %></td>
+              <td class="taction"><%= link_to 'Editar', edit_user_path(user), class: 'btn-action primary-btn' %></td>
+              <td class="taction"><%= link_to 'Excluir', user_path(user), class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
