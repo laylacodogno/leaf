@@ -127,6 +127,10 @@ table{
       .btn-action{
         font-size: 11px;
       }
+      &.taction{
+        width: 120px;
+        text-align: center;
+      }
     }
   }
 }
