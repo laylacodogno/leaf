@@ -1,5 +1,11 @@
-<h1>New Ingredient</h1>
+<div class="container">
+  <div class="row ingredient">
+    <h2 class="s12 page-title">Novo Ingrediente</h2>
 
-<%= render 'form', ingredient: @ingredient %>
+    <div class="notice-container">
+      <p id="notice"><%= notice %></p>
+    </div>
+    <%= render 'form', ingredient: @ingredient %>
 
-<%= link_to 'Back', ingredients_path %>
+  </div>
+</div>
