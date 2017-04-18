@@ -25,6 +25,7 @@ class IngredientsController < ApplicationController
   # POST /ingredients.json
   def create
     @ingredient = Ingredient.new(ingredient_params)
+    set_normalized_name
 
     respond_to do |format|
       if @ingredient.save
@@ -41,6 +42,8 @@ class IngredientsController < ApplicationController
   # PATCH/PUT /ingredients/1.json
   def update
     respond_to do |format|
+      set_normalized_name
+
       if @ingredient.update(ingredient_params)
         format.html { redirect_to @ingredient, notice: 'Ingrediente salvo com sucesso!' }
         format.json { render :show, status: :ok, location: @ingredient }
@@ -69,6 +72,10 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.require(:ingredient).permit(:name, :normalized_name)
+      params.require(:ingredient).permit(:name)
+    end
+
+    def set_normalized_name
+      @ingredient.normalized_name = @ingredient.name.parameterize
     end
 end
