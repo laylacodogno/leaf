@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /ingredients
   # GET /ingredients.json
   def index
@@ -56,7 +56,7 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: 'Ingredient excluido com sucesso!' }
+      format.html { redirect_to ingredients_url, notice: 'Ingrediente excluido com sucesso!' }
       format.json { head :no_content }
     end
   end
