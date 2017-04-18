@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  # TODO: adicionar token do usuário logado para filtrar produtos e adicionar/editar para o usuário logado
 
   # GET /ingredients
   # GET /ingredients.json
@@ -72,7 +73,7 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.require(:ingredient).permit(:name)
+      params.require(:ingredient).permit(:name, :user_id)
     end
 
     def set_normalized_name
