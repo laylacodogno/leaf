@@ -9,18 +9,48 @@ begin
 	ActiveRecord::Base.transaction do
 		puts "Leaf - Starting seed"
 
-		User.create(
+		user = User.create(
 			name: 'Pedro Belli de Souza Olivera',
 			email: 'pedro.belli2@gmail.com',
 			login: 'pedro.belli2',
 			state: User.states[:PR]
 		)
 
-		User.create(
+		Ingredient.create(
+			name: 'Banana',
+			normalized_name: 'banana',
+			user: user
+		)
+
+		Ingredient.create(
+			name: 'Aveia',
+			normalized_name: 'aveia',
+			user: user
+		)
+
+		Ingredient.create(
+			name: 'Leite',
+			normalized_name: 'leite',
+			user: user
+		)
+
+		user = User.create(
 			name: 'Layla Cristine de Oliveira Codogno',
 			email: 'layla.codogno@gmail.com',
 			login: 'layla.codogno',
 			state: User.states[:PR]
+		)
+
+		Ingredient.create(
+			name: 'Aveia',
+			normalized_name: 'aveia',
+			user: user
+		)
+
+		Ingredient.create(
+			name: 'Açai',
+			normalized_name: 'acai',
+			user: user
 		)
 
 		puts "Seed done!"

@@ -13,6 +13,7 @@
       </div>
     <% end %>
     <div class="row">
+      <%= f.hidden_field :user_id, value: "1"  %>
       <div class="input-field col s12">
         <%= f.text_field :name,  id: 'name' %>
         <label for="name">Nome</label>
