@@ -1,0 +1,32 @@
+<%= form_for(ingredient) do |f| %>
+  <div class="col s12 m8 offset-m2 card card-large">
+
+    <% if ingredient.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(ingredient.errors.count, "erro") %> prohibited this ingredient from being saved:</p>
+
+        <ul class="error_messages">
+        <% ingredient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :name,  id: 'name' %>
+        <label for="name">Nome</label>
+      </div>
+    </div>
+
+    <div class="card-action">
+      <%= link_to 'Voltar', ingredients_path  %>
+      <% if @ingredient.id.present? %>
+        <%= link_to 'Excluir', ingredient, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      <%= f.submit 'Salvar', class: 'right sucess-btn' %>
+
+    </div>
+  </div>
+
+<% end %>
