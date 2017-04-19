@@ -18,19 +18,19 @@ begin
 
 		Ingredient.create(
 			name: 'Banana',
-			normalized_name: 'banana',
+			normalized_name: 'Banana'.parameterize,
 			user: user
 		)
 
 		Ingredient.create(
 			name: 'Aveia',
-			normalized_name: 'aveia',
+			normalized_name: 'Aveia'.parameterize,
 			user: user
 		)
 
 		Ingredient.create(
 			name: 'Leite',
-			normalized_name: 'leite',
+			normalized_name: 'Leite'.parameterize,
 			user: user
 		)
 
@@ -43,14 +43,19 @@ begin
 
 		Ingredient.create(
 			name: 'Aveia',
-			normalized_name: 'aveia',
+			normalized_name: 'Aveia'.parameterize,
 			user: user
 		)
 
 		Ingredient.create(
 			name: 'Açai',
-			normalized_name: 'acai',
+			normalized_name: 'Acai'.parameterize,
 			user: user
+		)
+
+		CommonIngredient.create(
+			name: 'Aveia médio',
+			normalized_name: 'Aveia médio'.parameterize
 		)
 
 		puts "Seed done!"
