@@ -1,0 +1,2 @@
+class CommonIngredient < ApplicationRecord
+end
