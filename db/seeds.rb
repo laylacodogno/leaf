@@ -16,24 +16,6 @@ begin
 			state: User.states[:PR]
 		)
 
-		Ingredient.create(
-			name: 'Banana',
-			normalized_name: 'banana',
-			user: user
-		)
-
-		Ingredient.create(
-			name: 'Aveia',
-			normalized_name: 'aveia',
-			user: user
-		)
-
-		Ingredient.create(
-			name: 'Leite',
-			normalized_name: 'leite',
-			user: user
-		)
-
 		user = User.create(
 			name: 'Layla Cristine de Oliveira Codogno',
 			email: 'layla.codogno@gmail.com',
@@ -41,16 +23,28 @@ begin
 			state: User.states[:PR]
 		)
 
-		Ingredient.create(
-			name: 'Aveia',
-			normalized_name: 'aveia',
-			user: user
+		CommonIngredient.create(
+			name: 'Ovo',
+			normalized_name: 'Ovo'.parameterize
 		)
 
-		Ingredient.create(
-			name: 'Açai',
-			normalized_name: 'acai',
-			user: user
+		CommonIngredient.create(
+			name: 'Farinha de Trigo',
+			normalized_name: 'Farinha de Trigo'.parameterize
+		)
+
+		CommonIngredient.create(
+			name: 'Água',
+			normalized_name: 'Água'.parameterize
+		)
+
+		CommonIngredient.create(
+			name: 'Óleo Vegetal',
+			normalized_name: 'Óleo Vegetal'.parameterize
+		)
+		CommonIngredient.create(
+			name: 'Azeite de Oliva',
+			normalized_name: 'Azeite de Oliva'.parameterize
 		)
 
 		puts "Seed done!"
