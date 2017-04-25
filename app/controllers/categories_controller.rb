@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  # TODO: adicionar token do usuário logado para filtrar produtos e adicionar/editar para o usuário logado
 
   # GET /categories
   # GET /categories.json
@@ -66,9 +67,10 @@ class CategoriesController < ApplicationController
     def set_category
       @category = Category.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
       params.require(:category).permit(:name, :normalized_name)
     end
+
+
 end
