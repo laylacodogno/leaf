@@ -10,18 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403233736) do
+ActiveRecord::Schema.define(version: 20170426010809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "email",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "login",      null: false
-    t.integer  "state"
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "normalized_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_categories_on_user_id", using: :btree
   end
 
+  create_table "common_ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "normalized_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "normalized_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_ingredients_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "state"
+    t.string   "login",      null: false
+  end
+
+  add_foreign_key "categories", "users"
+  add_foreign_key "ingredients", "users"
 end

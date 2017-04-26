@@ -14,8 +14,8 @@ Things you may want to cover: -->
 * Rails version
   Rails 5.0.2
 
-* SQLite3 version
-  sqlite3 3.14.0
+* PostgreSQL version
+  PostgreSQL 9.6
 
 <!-- * System dependencies
 
