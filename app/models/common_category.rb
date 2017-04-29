@@ -1,0 +1,2 @@
+class CommonCategory < ApplicationRecord
+end

@@ -47,6 +47,23 @@ begin
 			normalized_name: 'Azeite de Oliva'.parameterize
 		)
 
+		CommonCategory.create(
+			name: 'Entradas',
+			normalized_name: 'Entradas'.parameterize
+		)
+		CommonCategory.create(
+			name: 'Pratos Principais',
+			normalized_name: 'Pratos Principais'.parameterize
+		)
+		CommonCategory.create(
+			name: 'Sobremesas',
+			normalized_name: 'Sobremesas'.parameterize
+		)
+		CommonCategory.create(
+			name: 'Salgados',
+			normalized_name: 'Salgados'.parameterize
+		)
+
 		puts "Seed done!"
 	end
 rescue => exp
