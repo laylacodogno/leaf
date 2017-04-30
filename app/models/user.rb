@@ -5,7 +5,7 @@ class User < ApplicationRecord
 	devise :database_authenticatable, :registerable,
   	:recoverable, :rememberable, :trackable, :validatable
 
-	after_create :set_login
+	after_create :set_username
 
 	has_many :ingredients
 
@@ -17,12 +17,12 @@ class User < ApplicationRecord
 	validates :name, presence: true, length: { minimum: 3, unless: "name.blank?" }
 	validates :email, presence: true, uniqueness: true
 
-  def set_login
-    self.login = self.email.split("@").first
-    temp_users = User.where(login: self.login)
+  def set_username
+    self.username = self.email.split("@").first
+    temp_users = User.where(username: self.username)
 
     if (temp_users.size > 0)
-      self.login = self.login + temp_users.size.to_s
+      self.username = self.username + temp_users.size.to_s
     end
 
     self.save
