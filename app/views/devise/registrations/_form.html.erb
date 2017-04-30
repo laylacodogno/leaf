@@ -1,0 +1,39 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="s12 card card-large">
+
+  <%= devise_error_messages! %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <%= f.text_field :name,  id: 'name' %>
+      <label for="name">Nome</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">email</i>
+      <%= f.text_field :email, id: 'email' %>
+      <label for="email">E-mail</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">map</i>
+
+      <%= f.select :state, User.states.keys, prompt: 'Estado', label: false, id: 'state' %>
+    </div>
+
+    <div class="input-field col s12">
+      <i class="material-icons prefix">password</i>
+      <%= f.password_field :password, id: 'password', autocomplete: "off" %>
+      <label for="password">Senha (mínimo de <%= @minimum_password_length %> caracteres)</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">password</i>
+      <%= f.password_field :password_confirmation, id: 'password_confirmation', autocomplete: "off" %>
+      <label for="password_confirmation">Confirmar Senha</label>
+    </div>
+  </div>
+
+  <div class="card-action">
+    <%= f.submit 'Salvar', class: 'right sucess-btn' %>
+  </div>
+</div>
+<% end %>
