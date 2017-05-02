@@ -10,6 +10,8 @@ class User < ApplicationRecord
 	has_many :ingredients
 	has_many :categories
 
+	has_many :ingredients
+
 	enum state: [
 		:AC, :AL, :AP, :AM, :BA, :CE, :DF, :ES, :GO, :MA, :MT, :MS, :MG, :PA,
 		:PB, :PR, :PE, :PI, :RJ, :RN, :RS, :RO, :RR, :SC, :SP, :SE, :TO

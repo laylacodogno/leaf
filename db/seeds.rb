@@ -69,6 +69,30 @@ begin
 			normalized_name: 'Salgados'.parameterize
 		)
 
+		CommonIngredient.create(
+			name: 'Ovo',
+			normalized_name: 'Ovo'.parameterize
+		)
+
+		CommonIngredient.create(
+			name: 'Farinha de Trigo',
+			normalized_name: 'Farinha de Trigo'.parameterize
+		)
+
+		CommonIngredient.create(
+			name: 'Água',
+			normalized_name: 'Água'.parameterize
+		)
+
+		CommonIngredient.create(
+			name: 'Óleo Vegetal',
+			normalized_name: 'Óleo Vegetal'.parameterize
+		)
+		CommonIngredient.create(
+			name: 'Azeite de Oliva',
+			normalized_name: 'Azeite de Oliva'.parameterize
+		)
+
 		puts "Seed done!"
 	end
 rescue => exp

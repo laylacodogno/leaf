@@ -1,11 +1,15 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+
   before_action :authenticate_user!
+
 
   # GET /ingredients
   # GET /ingredients.json
   def index
+
     @ingredients = Ingredient.where(user_id: current_user.id)
+
   end
 
   # GET /ingredients/1

@@ -3,7 +3,9 @@
 
     <% if ingredient.errors.any? %>
       <div id="error_explanation">
+
         <p class="danger-color"><%= ingredient.errors.count %> Erro(s):</p>
+
 
         <ul class="error_messages">
         <% ingredient.errors.full_messages.each do |message| %>
@@ -13,7 +15,9 @@
       </div>
     <% end %>
     <div class="row">
+
       <%= f.hidden_field :user_id, value: current_user.id  %>
+
       <div class="input-field col s12">
         <%= f.text_field :name,  id: 'name' %>
         <label for="name">Nome</label>
