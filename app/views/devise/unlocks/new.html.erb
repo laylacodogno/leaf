@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row login-password">
+    <h2 class="s12 page-title">Reenviar Intruções</h2>
+
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+    <div class="col s12 m8 offset-m2 card card-medium">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.email_field :email, autofocus: true,  id: 'email' %>
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="card-action">
+        <%= f.submit 'Reenviar Instruções', class: 'right sucess-btn' %>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,11 +1,11 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-  # TODO: adicionar token do usuário logado para filtrar produtos e adicionar/editar para o usuário logado
+  before_action :authenticate_user!
 
   # GET /ingredients
   # GET /ingredients.json
   def index
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.where(user_id: current_user.id)
   end
 
   # GET /ingredients/1

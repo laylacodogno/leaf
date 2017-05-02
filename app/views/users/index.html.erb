@@ -30,6 +30,7 @@
         </tbody>
       </table>
       <div class="card-action right-align">
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
         <%= link_to 'Novo Usuário', new_user_path, class: 'primary-btn' %>
       </div>
 

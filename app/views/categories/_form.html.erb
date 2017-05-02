@@ -4,7 +4,7 @@
 
     <% if category.errors.any? %>
       <div id="error_explanation">
-        <p class="danger-color"><%= pluralize(category.errors.count, "Erro") %> </p>
+      <p class="danger-color"><%= category.errors.count %> Erro(s):</p>
 
         <ul class="error_messages">
         <% category.errors.full_messages.each do |message| %>

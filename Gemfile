@@ -39,6 +39,8 @@ gem 'materialize-sass'
 # Gravatar Connection
 gem 'gravtastic'
 
+# Devise for auth
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
