@@ -1,6 +1,11 @@
 class Category < ApplicationRecord
   belongs_to :user
 
+  validates :name, presence: true, length: { minimum: 3, unless: "name.blank?" },
+		uniqueness: { scope: :user, message: "ops, essa categoria já existe." }
+
+	validates :user, presence: true
+
   before_save :set_normalized_name
 
   def set_normalized_name
