@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :destroy]
+  before_action :set_edit_user, only: [:edit, :update]
   before_action :authenticate_user!
 
   # GET /users/1
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'Usuário excluido com sucesso!' }
@@ -42,5 +43,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :state)
+    end
+
+    def set_edit_user
+      @user = User.find(current_user.id)
     end
 end
