@@ -3,6 +3,11 @@
     <h2 class="s12 page-title">Login</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+    <div class="notice-container">
+      <p class="alert"><%= alert %></p>
+    </div>
+
     <div class="col s12 m8 offset-m2 card card-medium">
       <div class="row">
         <div class="input-field col s12">
