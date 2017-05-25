@@ -1,11 +1,14 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-  # TODO: adicionar token do usuário logado para filtrar produtos e adicionar/editar para o usuário logado
+
+  before_action :authenticate_user!
+
 
   # GET /ingredients
   # GET /ingredients.json
   def index
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.where(user_id: current_user.id)
+
   end
 
   # GET /ingredients/1
@@ -26,7 +29,7 @@ class IngredientsController < ApplicationController
   # POST /ingredients.json
   def create
     @ingredient = Ingredient.new(ingredient_params)
-    set_normalized_name
+
 
     respond_to do |format|
       if @ingredient.save
@@ -43,7 +46,7 @@ class IngredientsController < ApplicationController
   # PATCH/PUT /ingredients/1.json
   def update
     respond_to do |format|
-      set_normalized_name
+
 
       if @ingredient.update(ingredient_params)
         format.html { redirect_to @ingredient, notice: 'Ingrediente salvo com sucesso!' }
@@ -74,9 +77,5 @@ class IngredientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
       params.require(:ingredient).permit(:name, :user_id)
-    end
-
-    def set_normalized_name
-      @ingredient.normalized_name = @ingredient.name.parameterize
     end
 end

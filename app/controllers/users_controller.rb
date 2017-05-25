@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /users
   def index
@@ -22,8 +23,6 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-
-    set_login
 
     respond_to do |format|
       if @user.save
@@ -68,14 +67,5 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :state)
-    end
-
-    def set_login
-      @user.login = @user.email.split("@").first
-      temp_users = User.where(login: @user.login)
-
-      if (temp_users.size > 0)
-        @user.login = @user.login + temp_users.size.to_s
-      end
     end
 end

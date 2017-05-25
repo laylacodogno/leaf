@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row login-conf">
+    <h2 class="s12 page-title">Reenviar instruções de confirmação</h2>
+
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+    <div class="col s12 m8 offset-m2 card card-medium">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <%= f.text_field :email,  id: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+          <label for="name">Email</label>
+        </div>
+      </div>
+
+      <div class="card-action">
+        <%= f.submit 'Reenviar instruções', class: 'right sucess-btn' %>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,7 +1,16 @@
 class Ingredient < ApplicationRecord
 
 	belongs_to :user
- 	
- 	validates :name, presence: true, length: { minimum: 3, too_short: "ops nome muito pequeno. deve ter no mínimo 3 caracteres." }, uniqueness: { scope: :user, message: "ops, esse ingrediente já existe." }
+
+
+	validates :name, presence: true, length: { minimum: 3, unless: "name.blank?" },
+		uniqueness: { scope: :user, message: "ops, esse ingrediente já existe." }
+
 	validates :user, presence: true
+
+	before_save :set_normalized_name
+
+  def set_normalized_name
+    self.normalized_name = self.name.parameterize
+  end
 end
