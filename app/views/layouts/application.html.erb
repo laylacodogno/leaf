@@ -13,7 +13,14 @@
   <body>
     <header>
       <ul id="nav-user" class="dropdown-content">
-        <li><%= link_to('Login', new_user_session_path)  %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Perfil', current_user %></li>
+          <li><%= link_to 'Ingredientes', ingredients_path %></li>
+          <li><%= link_to 'Categorias', categories_path %></li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to('Login', new_user_session_path)  %></li>
+        <% end %>
       </ul>
       <nav class="nav-primary">
         <div class="nav-wrapper container" >
@@ -36,11 +43,6 @@
       <nav class="nav-secondary">
         <div class="nav-wrapper container">
           <ul class="left hide-on-med-and-down navbar-links">
-            <li><%= link_to 'Usuários', users_path, class: 'primary-link' %></li>
-            <li><%= link_to 'Ingredientes', ingredients_path, class: 'primary-link' %></li>
-
-            <li><%= link_to 'Categorias', categories_path, class: 'primary-link' %></li>
-
           </ul>
         </div>
       </nav>

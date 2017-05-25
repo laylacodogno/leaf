@@ -10,7 +10,7 @@ class User < ApplicationRecord
 	has_many :ingredients
 	has_many :categories
 
-	has_many :ingredients
+	attr_accessor :login
 
 	enum state: [
 		:AC, :AL, :AP, :AM, :BA, :CE, :DF, :ES, :GO, :MA, :MT, :MS, :MG, :PA,
@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
 	validates :name, presence: true, length: { minimum: 3, unless: "name.blank?" }
 	validates :email, presence: true, uniqueness: true
+	validates :username, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true }
 
   def set_username
     self.username = self.email.split("@").first
@@ -30,4 +31,13 @@ class User < ApplicationRecord
 
     self.save
   end
+
+  def self.find_for_database_authentication(warden_conditions)
+	  conditions = warden_conditions.dup
+	  if login = conditions.delete(:login)
+	    where(conditions.to_h).where(["username = :value OR email = :value", { :value => login }]).first
+	  elsif conditions.has_key?(:username) || conditions.has_key?(:email)
+	    where(conditions.to_h).first
+	  end
+	end
 end
