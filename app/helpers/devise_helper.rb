@@ -8,7 +8,6 @@ module DeviseHelper
     html = <<-HTML
     <div id="error_explanation">
       <div id="error_explanation">
-        <p class="danger-color">#{resource.errors.count} Erro(s):</p>
         <ul class="error_messages">#{messages}</ul>
       </div>
     </div>

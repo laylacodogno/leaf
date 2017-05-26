@@ -4,9 +4,12 @@ pt-BR:
       user:
         name: nome
         email: email
+        username: nome do usuário
         password: senha
         password_confirmation: confirmação de senha
       ingredient:
+        name: nome
+      category:
         name: nome
     errors:
       messages:

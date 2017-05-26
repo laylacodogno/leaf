@@ -1,20 +1,20 @@
-
 <%= form_for(category) do |f| %>
+
+  <% if category.errors.any? %>
+    <div id="error_explanation">
+      <ul class="error_messages">
+      <% category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="col s12 m8 offset-m2 card card-large">
 
-    <% if category.errors.any? %>
-      <div id="error_explanation">
-      <p class="danger-color"><%= category.errors.count %> Erro(s):</p>
-
-        <ul class="error_messages">
-        <% category.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
     <div class="row">
-      <%= f.hidden_field :user_id, value: current_user.id   %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      
       <div class="input-field col s12">
         <%= f.text_field :name,  id: 'name' %>
         <label for="name">Nome</label>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="card-action">
-      <%= link_to 'Voltar', categories_path  %>
+      <%= link_to 'Voltar', categories_path %>
       <% if @category.id.present? %>
         <%= link_to 'Excluir', category, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
