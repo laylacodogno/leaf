@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true, length: { minimum: 3, unless: "name.blank?" },
-		uniqueness: { scope: :user, message: "ops, essa categoria já existe." }
+		uniqueness: { scope: :user }
 
 	validates :user, presence: true
 
