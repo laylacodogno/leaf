@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_measurement_unit_id: 
+  to_measurement_unit_id: 
+  factor: 1.5
+
+two:
+  from_measurement_unit_id: 
+  to_measurement_unit_id: 
+  factor: 1.5

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529010029) do
+ActiveRecord::Schema.define(version: 20170530011627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(version: 20170529010029) do
     t.index ["user_id"], name: "index_ingredients_on_user_id", using: :btree
   end
 
+  create_table "measurement_unit_conversions", force: :cascade do |t|
+    t.integer  "from_measurement_unit_id"
+    t.integer  "to_measurement_unit_id"
+    t.float    "factor"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["from_measurement_unit_id"], name: "index_measurement_unit_conversions_on_from_measurement_unit_id", using: :btree
+    t.index ["to_measurement_unit_id"], name: "index_measurement_unit_conversions_on_to_measurement_unit_id", using: :btree
+  end
+
   create_table "measurement_units", force: :cascade do |t|
     t.string   "name",                null: false
     t.integer  "measurement_unit_id"
@@ -77,5 +87,7 @@ ActiveRecord::Schema.define(version: 20170529010029) do
 
   add_foreign_key "categories", "users"
   add_foreign_key "ingredients", "users"
+  add_foreign_key "measurement_unit_conversions", "measurement_units", column: "from_measurement_unit_id"
+  add_foreign_key "measurement_unit_conversions", "measurement_units", column: "to_measurement_unit_id"
   add_foreign_key "measurement_units", "measurement_units"
 end
