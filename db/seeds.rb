@@ -67,26 +67,33 @@ begin
 		)
 
 		MeasurementUnit.create(
-			name: 'Unidade'
+			name: 'Unidade',
 		)
 		measurement_unit_kg = MeasurementUnit.create(
 			name: 'Kg'
 		)
-		MeasurementUnit.create(
+		measurement_unit_g = MeasurementUnit.create(
 			name: 'g',
 			measurement_unit: measurement_unit_kg
 		)
 		measurement_unit_l = MeasurementUnit.create(
 			name: 'L'
 		)
-		MeasurementUnit.create(
+		measurement_unit_ml = MeasurementUnit.create(
 			name: 'ml',
 			measurement_unit: measurement_unit_l
 		)
 
-
-
-
+		MeasurementUnitConversion.create(
+			from_measurement_unit: measurement_unit_g,
+			to_measurement_unit: measurement_unit_kg,
+			factor: 0.001
+		)
+		MeasurementUnitConversion.create(
+			from_measurement_unit: measurement_unit_ml,
+			to_measurement_unit: measurement_unit_l,
+			factor: 0.001
+		)
 
 		puts "Seed done!"
 	end
