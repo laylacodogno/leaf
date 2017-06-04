@@ -1,37 +1,37 @@
 <%= form_for(recipe) do |f| %>
   <% if recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-      <ul>
-      <% recipe.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <ul>
+    <% recipe.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :preparation_time %>
-    <%= f.time_select :preparation_time %>
+  <%= f.label :preparation_time %>
+  <%= f.time_select :preparation_time %>
   </div>
 
   <div class="field">
-    <%= f.label :servings %>
-    <%= f.number_field :servings %>
+  <%= f.label :servings %>
+  <%= f.number_field :servings %>
   </div>
 
   <div class="field">
-    <%= f.label :directions %>
-    <%= f.text_field :directions %>
+  <%= f.label :directions %>
+  <%= f.text_field :directions %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+  <%= f.submit %>
   </div>
 <% end %>

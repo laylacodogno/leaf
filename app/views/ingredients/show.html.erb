@@ -1,25 +1,25 @@
 <div class="container">
   <div class="row ingredient">
-    <h1 class="s12 page-title">Ingrediente</h1>
+  <h1 class="s12 page-title">Ingrediente</h1>
 
-    <div class="notice-container">
-      <p id="notice"><%= notice %></p>
-    </div>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
 
-    <div class="col s12 m8 offset-m2 card card-medium">
-      <div class="ingredient-info">
-        <p>
-          <strong>Nome:</strong>
-          <%= @ingredient.name %>
-        </p>
-
-      </div>
-
-      <div class="card-action">
-        <%= link_to 'Voltar', ingredients_path, class: 'primary-btn' %>
-        <%= link_to 'Editar', edit_ingredient_path(@ingredient), class: 'primary-btn' %>
-      </div>
+  <div class="col s12 m8 offset-m2 card card-medium">
+    <div class="ingredient-info">
+    <p>
+      <strong>Nome:</strong>
+      <%= @ingredient.name %>
+    </p>
 
     </div>
+
+    <div class="card-action">
+    <%= link_to 'Voltar', ingredients_path, class: 'primary-btn' %>
+    <%= link_to 'Editar', edit_ingredient_path(@ingredient), class: 'primary-btn' %>
+    </div>
+
+  </div>
   </div>
 </div>

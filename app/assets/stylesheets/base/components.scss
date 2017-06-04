@@ -22,16 +22,16 @@
   text-transform: uppercase;
   color: #b8c0c3;
   &:active, &:hover, &:focus{
-    color: $primary-color;
-    background-color: transparent;
-    border-bottom: 2px solid $primary-color;
+  color: $primary-color;
+  background-color: transparent;
+  border-bottom: 2px solid $primary-color;
   }
 }
 .secondary-link{
   font-family: $primary-font-family;
   &:active, &:hover, &:focus{
-    color: #b8c0c3;
-    background-color: transparent;
+  color: #b8c0c3;
+  background-color: transparent;
   }
 }
 
@@ -53,18 +53,18 @@ textarea.materialize-textarea{
   // font-size: 14px;
 
   &:focus{
-    box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
   }
   &.primary-input{
-    border-radius: 50px;
-    line-height: inherit;
-    border: 1px solid $primary-color;
-    background-color: white;
+  border-radius: 50px;
+  line-height: inherit;
+  border: 1px solid $primary-color;
+  background-color: white;
 
   }
   &.minimal-input{
-    line-height: inherit;
-    background-color: transparent;
+  line-height: inherit;
+  background-color: transparent;
 
   }
 }
@@ -92,26 +92,26 @@ textarea.materialize-textarea{
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px #ffffff;
   .card-action{
-    > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
-      @extend .btn-action;
-    }
-    input[type=submit]{
-      @extend .btn-action;
-      @extend .btn;
-    }
+  > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+    @extend .btn-action;
+  }
+  input[type=submit]{
+    @extend .btn-action;
+    @extend .btn;
+  }
   }
   .card-title{
-    font-family: $primary-font-family;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.11;
-    letter-spacing: normal;
-    color: #696e6f;
+  font-family: $primary-font-family;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: #696e6f;
   }
 
   &.card-large{
-    padding: 15px;
+  padding: 15px;
   }
 
   &.card-medium{
@@ -123,15 +123,15 @@ textarea.materialize-textarea{
 }
 table{
   tr{
-    td{
-      .btn-action{
-        font-size: 11px;
-      }
-      &.taction{
-        width: 120px;
-        text-align: center;
-      }
+  td{
+    .btn-action{
+    font-size: 11px;
     }
+    &.taction{
+    width: 120px;
+    text-align: center;
+    }
+  }
   }
 }
 .img-container{
@@ -140,8 +140,8 @@ table{
   border: solid 3.5px #ffffff;
   padding: 5px;
   img{
-    max-width: 100%;
-    margin: 0 auto;
-    vertical-align: middle;
+  max-width: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
   }
 }

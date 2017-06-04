@@ -1,25 +1,25 @@
 <div class="container">
   <div class="row login-password">
-    <h2 class="s12 page-title">Esqueceu sua senha?</h2>
+  <h2 class="s12 page-title">Esqueceu sua senha?</h2>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    
-    <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  
+  <%= devise_error_messages! %>
 
-    <div class="col s12 m8 offset-m2 card card-medium">
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.text_field :email,  id: 'email' %>
-          <label for="name">Email</label>
-        </div>
-      </div>
-
-      <div class="card-action">
-        <%= f.submit 'Redefinir Senha', class: 'right sucess-btn' %>
-        <%= render "devise/shared/links" %>
-      </div>
+  <div class="col s12 m8 offset-m2 card card-medium">
+    <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :email,  id: 'email' %>
+      <label for="name">Email</label>
     </div>
-    <% end %>
+    </div>
+
+    <div class="card-action">
+    <%= f.submit 'Redefinir Senha', class: 'right sucess-btn' %>
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  <% end %>
 
   </div>
 </div>
