@@ -17,7 +17,7 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.title %></td>
-        <td><%= recipe.preparation_time %></td>
+        <td><%= show_time_only(recipe.preparation_time) %></td>
         <td><%= recipe.servings %></td>
         <td><%= recipe.directions %></td>
         <td><%= link_to 'Show', recipe %></td>

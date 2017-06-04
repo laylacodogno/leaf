@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
 	gravtastic
 	devise :database_authenticatable, :registerable,
-  	:recoverable, :rememberable, :trackable, :validatable
+		:recoverable, :rememberable, :trackable, :validatable
 
 	after_create :set_username
 
