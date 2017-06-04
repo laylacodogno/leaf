@@ -1,31 +1,31 @@
 <div class="container">
   <div class="row login-password">
-    <h2 class="s12 page-title">Alterar Senha</h2>
+  <h2 class="s12 page-title">Alterar Senha</h2>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-    
-    <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  
+  <%= devise_error_messages! %>
 
-    <div class="col s12 m8 offset-m2 card card-medium">
-      <div class="row">
-        <%= f.hidden_field :reset_password_token %>
+  <div class="col s12 m8 offset-m2 card card-medium">
+    <div class="row">
+    <%= f.hidden_field :reset_password_token %>
 
-        <div class="input-field col s12">
-          <%= f.password_field :password, autofocus: true, autocomplete: "off" ,  id: 'password' %>
-          <label for="password">Nova Senha</label>
-        </div>
-        <div class="input-field col s12">
-          <%= f.password_field :password_confirmation, autocomplete: "off",  id: 'password_confirmation' %>
-          <label for="password_confirmation">Confirmação Nova Senha</label>
-        </div>
-      </div>
-
-      <div class="card-action">
-        <%= f.submit 'Redefinir Senha', class: 'right sucess-btn' %>
-        <%= render "devise/shared/links" %>
-      </div>
+    <div class="input-field col s12">
+      <%= f.password_field :password, autofocus: true, autocomplete: "off" ,  id: 'password' %>
+      <label for="password">Nova Senha</label>
     </div>
-    <% end %>
+    <div class="input-field col s12">
+      <%= f.password_field :password_confirmation, autocomplete: "off",  id: 'password_confirmation' %>
+      <label for="password_confirmation">Confirmação Nova Senha</label>
+    </div>
+    </div>
+
+    <div class="card-action">
+    <%= f.submit 'Redefinir Senha', class: 'right sucess-btn' %>
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  <% end %>
 
   </div>
 </div>

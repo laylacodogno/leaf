@@ -1,35 +1,35 @@
 
 <div class="container">
   <div class="row category">
-    <h1 class="s12 page-title">Categorias</h1>
+  <h1 class="s12 page-title">Categorias</h1>
 
-    <div class="notice-container">
-      <p id="notice"><%= notice %></p>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <div class="s12 card card-large">
+    <table id="table-user">
+    <thead>
+      <tr>
+      <th>Nome</th>
+      <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td class="taction"><%= link_to 'Editar', edit_category_path(category), class: 'btn-action primary-btn' %></td>
+        <td class="taction"><%= link_to 'Excluir', category, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+    </table>
+    <div class="card-action right-align">
+    <%= link_to 'Nova Categoria', new_category_path, class: 'primary-btn' %>
     </div>
 
-    <div class="s12 card card-large">
-      <table id="table-user">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th colspan="2"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @categories.each do |category| %>
-            <tr>
-              <td><%= category.name %></td>
-              <td class="taction"><%= link_to 'Editar', edit_category_path(category), class: 'btn-action primary-btn' %></td>
-              <td class="taction"><%= link_to 'Excluir', category, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-
-      </table>
-      <div class="card-action right-align">
-        <%= link_to 'Nova Categoria', new_category_path, class: 'primary-btn' %>
-      </div>
-
-    </div>
+  </div>
   </div>
 </div>

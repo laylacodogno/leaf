@@ -1,34 +1,34 @@
 <%= form_for(ingredient) do |f| %>
 
   <% if ingredient.errors.any? %>
-    <div id="error_explanation">
-      <ul class="error_messages">
-      <% ingredient.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <div id="error_explanation">
+    <ul class="error_messages">
+    <% ingredient.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
   <% end %>
 
   <div class="col s12 m8 offset-m2 card card-large">
 
-    <div class="row">
-      <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="row">
+    <%= f.hidden_field :user_id, value: current_user.id %>
 
-      <div class="input-field col s12">
-        <%= f.text_field :name,  id: 'name' %>
-        <label for="name">Nome</label>
-      </div>
+    <div class="input-field col s12">
+    <%= f.text_field :name,  id: 'name' %>
+    <label for="name">Nome</label>
     </div>
+  </div>
 
-    <div class="card-action">
-      <%= link_to 'Voltar', ingredients_path %>
-      <% if @ingredient.id.present? %>
-        <%= link_to 'Excluir', ingredient, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <%= f.submit 'Salvar', class: 'right sucess-btn' %>
+  <div class="card-action">
+    <%= link_to 'Voltar', ingredients_path %>
+    <% if @ingredient.id.present? %>
+    <%= link_to 'Excluir', ingredient, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= f.submit 'Salvar', class: 'right sucess-btn' %>
 
-    </div>
+  </div>
   </div>
 
 <% end %>

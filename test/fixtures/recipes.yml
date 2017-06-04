@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  preparation_time: 2017-06-01 22:53:09
+  servings: 1
+  directions: MyString
+
+two:
+  title: MyString
+  preparation_time: 2017-06-01 22:53:09
+  servings: 1
+  directions: MyString

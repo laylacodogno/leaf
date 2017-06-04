@@ -1,30 +1,30 @@
 <div class="container">
   <div class="row user">
-    <h1 class="s12 page-title">Usuário</h1>
+  <h1 class="s12 page-title">Usuário</h1>
 
-    <div class="notice-container">
-      <p id="notice"><%= notice %></p>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <div class="s12 card card-large">
+    <div class="user-info">
+    <p>
+      <strong>Nome:</strong>
+      <%= @user.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
     </div>
 
-    <div class="s12 card card-large">
-      <div class="user-info">
-        <p>
-          <strong>Nome:</strong>
-          <%= @user.name %>
-        </p>
-
-        <p>
-          <strong>Email:</strong>
-          <%= @user.email %>
-        </p>
-      </div>
-
-      <% if @user.id == current_user.id %>
-        <div class="card-action">
-          <%= link_to 'Editar', edit_user_path(@user), class: 'primary-btn' %>
-        </div>
-      <% end %>
-
+    <% if @user.id == current_user.id %>
+    <div class="card-action">
+      <%= link_to 'Editar', edit_user_path(@user), class: 'primary-btn' %>
     </div>
+    <% end %>
+
+  </div>
   </div>
 </div>
