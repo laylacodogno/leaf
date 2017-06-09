@@ -11,6 +11,11 @@ pt-BR:
         name: nome
       category:
         name: nome
+      recipe:
+        title: título
+        preparation_time: tempo de preparo
+        servings: número de porções
+        directions: modo de preparo
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
