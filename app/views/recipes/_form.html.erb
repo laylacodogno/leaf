@@ -1,9 +1,8 @@
 <%= form_for(recipe) do |f| %>
+
   <% if recipe.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
-    <ul>
+    <ul class="error_messages">
     <% recipe.errors.full_messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
@@ -11,27 +10,80 @@
   </div>
   <% end %>
 
-  <div class="field">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="col s12 card card-large">
+  <div class="row">
+    <div class="input-field col s12">
+    <%= f.text_field :title,  id: 'title' %>
+    <label for="title">Título</label>
+    </div>
+
+    <div class="input-field col s12 m4">
+      <!-- TODO: fazer maskara -->
+    <%= f.text_field :preparation_time,  id: 'preparation_time' %>
+    <label for="preparation_time">Tempo de Preparo</label>
+    </div>
+
+    <div class="input-field col s12 m4">
+    <%= f.number_field :servings,  id: 'servings' %>
+    <label for="servings">Porções</label>
+    </div>
+
+    <div class="input-field col s12 m4">
+      <select multiple>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label>Categoria</label>
+    </div>
+
+  <div class="col s12" id="ingredients">
+    <!-- <p>Ingredients</p> -->
+    <div class="input-field col s6 m7">
+      <select id="ingredient">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label for="ingredient">Ingrediente</label>
+    </div>
+
+    <div class="input-field col s2 m2">
+      <input type="number" id="quant">
+      <label for="quant">Quantidade</label>
+    </div>
+
+    <div class="input-field col s3 m2">
+      <select id="unit">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label for="unit">Unidade</label>
+    </div>
+
+    <div class="input-field col s1">
+      <a class="waves-effect waves-light btn btn-ingredient"><i class="material-icons">add</i></a>
+    </div>
   </div>
 
-  <div class="field">
-  <%= f.label :preparation_time %>
-  <%= f.time_select :preparation_time %>
+    <div class="input-field col s12">
+    <%= f.text_area :directions, id: 'directions', class: 'materialize-textarea' %>
+    <label for="directions">Modo de Prepato</label>
+    </div>
   </div>
 
-  <div class="field">
-  <%= f.label :servings %>
-  <%= f.number_field :servings %>
+  <div class="card-action">
+    <%= link_to 'Voltar', recipes_path %>
+    <% if @recipe.id.present? %>
+    <%= link_to 'Excluir', recipe, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= f.submit 'Salvar', class: 'right sucess-btn' %>
+
+  </div>
   </div>
 
-  <div class="field">
-  <%= f.label :directions %>
-  <%= f.text_field :directions %>
-  </div>
-
-  <div class="actions">
-  <%= f.submit %>
-  </div>
 <% end %>

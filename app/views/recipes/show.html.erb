@@ -1,24 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row ingredient">
+  <!-- <h1 class="s12 page-title">Receita</h1> -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
 
-<p>
-  <strong>Preparation time:</strong>
-  <%= show_time_only(@recipe.preparation_time) %>
-</p>
+  <div class="col s12 card card-medium card-book">
+    <div class="row">
+      <div class="recipe-title col s12 m8">
+        <h2><%= @recipe.title %></h2>
+      </div>
+      <div class="col s6 m2 recipe-info">
+        <i class="material-icons">timer</i>
+        <p class="label">preparo</p>
+        <p class="info"><%= @recipe.preparation_time %></p>
+      </div>
+      <div class="col s6 m2 recipe-info">
+        <i class="material-icons">room_service</i>
+        <p class="label">porções</p>
+        <p class="info"><%= @recipe.servings %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 recipe-ingredients">
+        <h5 class="subtitle">Ingredientes</h5>
+        <ul class="ingredients-list">
+          <li class="ingredient">150g Aveia</li>
+          <li class="ingredient">3 xícaras Óleo</li>
+          <li class="ingredient">150g Aveia</li>
+          <li class="ingredient">150g Aveia</li>
+        </ul>
+      </div>
+      <div class="col s12 recipe-directions">
+        <h5 class="subtitle">Modo de Preparo</h5>
+        <p><%= @recipe.directions %></p>
+      </div>
+    </div>
 
-<p>
-  <strong>Servings:</strong>
-  <%= @recipe.servings %>
-</p>
 
-<p>
-  <strong>Directions:</strong>
-  <%= @recipe.directions %>
-</p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+  </div>
+  </div>
+</div>
