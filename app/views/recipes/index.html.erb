@@ -14,7 +14,7 @@
         <th>Título</th>
         <th>Tempo de Preparo</th>
         <th>Porções</th>
-        <th colspan="2"></th>
+        <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +23,7 @@
         <td><%= recipe.title %></td>
         <td><%= show_time_only(recipe.preparation_time) %></td>
         <td><%= recipe.servings %></td>
+        <td class="taction"><%= link_to 'Visualizar', recipe_path(recipe), class: 'btn-action primary-btn'  %></td>
         <td class="taction"><%= link_to 'Editar', edit_recipe_path(recipe), class: 'btn-action primary-btn'  %></td>
         <td class="taction"><%= link_to 'Excluir', recipe, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
