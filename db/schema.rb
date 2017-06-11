@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611212107) do
+ActiveRecord::Schema.define(version: 20170611212655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,12 @@ ActiveRecord::Schema.define(version: 20170611212107) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["measurement_unit_id"], name: "index_measurement_units_on_measurement_unit_id", using: :btree
+  end
+
+  create_table "recipe_items", force: :cascade do |t|
+    t.float    "amount",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "recipes", force: :cascade do |t|
