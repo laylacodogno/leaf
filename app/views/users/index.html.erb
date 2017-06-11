@@ -1,39 +1,38 @@
 
 <div class="container">
   <div class="row user">
-    <h1 class="s12 page-title">Users</h1>
+  <h1 class="s12 page-title">Usuários</h1>
 
-    <div class="notice-container">
-      <p id="notice"><%= notice %></p>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <div class="s12 card card-large">
+    <table id="table-user">
+    <thead>
+      <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td class="taction"><%= link_to 'Perfil', user, class: 'btn-action primary-btn' %></td>
+        <td class="taction"><%= link_to 'Editar', edit_user_path(user), class: 'btn-action primary-btn' %></td>
+        <td class="taction"><%= link_to 'Excluir', user_path(user), class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+    <div class="card-action right-align">
+    <%= link_to 'Novo Usuário', new_user_path, class: 'primary-btn' %>
     </div>
 
-    <div class="s12 card card-large">
-      <table id="table-user">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td class="taction"><%= link_to 'Perfil', user, class: 'btn-action primary-btn' %></td>
-              <td class="taction"><%= link_to 'Editar', edit_user_path(user), class: 'btn-action primary-btn' %></td>
-              <td class="taction"><%= link_to 'Excluir', user_path(user), class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <div class="card-action right-align">
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
-        <%= link_to 'Novo Usuário', new_user_path, class: 'primary-btn' %>
-      </div>
-
-    </div>
+  </div>
   </div>
 </div>

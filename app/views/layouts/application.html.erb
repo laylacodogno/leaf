@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Leaf</title>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag 'favicon.ico' %>
+  <title>Leaf</title>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag  'application', media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>
-      <ul id="nav-user" class="dropdown-content">
-        <li><%= link_to('Login', new_user_session_path)  %></li>
+  <header>
+    <ul id="nav-user" class="dropdown-content">
+    <% if user_signed_in? %>
+      <li><%= link_to 'Perfil', current_user %></li>
+      <li><%= link_to 'Ingredientes', ingredients_path %></li>
+      <li><%= link_to 'Categorias', categories_path %></li>
+      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+    <% else %>
+      <li><%= link_to('Login', new_user_session_path)  %></li>
+    <% end %>
+    </ul>
+    <nav class="nav-primary">
+    <div class="nav-wrapper container" >
+      <%= link_to '', root_path, class: 'brand-logo' %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down navbar-links">
+      <li>
+        <form class="row navbar-search">
+        <div class="input-field col s12">
+          <input id="search" type="search" required>
+        </div>
+        <button class="btn-search" type="submit" name="action"></button>
+        </form>
+      </li>
+      <li>
+        <a class="dropdown-button link-dropdown" href="#!" data-activates="nav-user"><i class="ic-user"></i></a>
+      </li>
       </ul>
-      <nav class="nav-primary">
-        <div class="nav-wrapper container" >
-          <%= link_to '', root_path, class: 'brand-logo' %>
-          <ul id="nav-mobile" class="right hide-on-med-and-down navbar-links">
-            <li>
-              <form class="row navbar-search">
-                <div class="input-field col s12">
-                  <input id="search" type="search" required>
-                </div>
-                <button class="btn-search" type="submit" name="action"></button>
-              </form>
-            </li>
-            <li>
-              <a class="dropdown-button link-dropdown" href="#!" data-activates="nav-user"><i class="ic-user"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <nav class="nav-secondary">
-        <div class="nav-wrapper container">
-          <ul class="left hide-on-med-and-down navbar-links">
-            <li><%= link_to 'Usuários', users_path, class: 'primary-link' %></li>
-            <li><%= link_to 'Ingredientes', ingredients_path, class: 'primary-link' %></li>
-
-            <li><%= link_to 'Categorias', categories_path, class: 'primary-link' %></li>
-
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <%= yield %>
-    </main>
+    </div>
+    </nav>
+    <nav class="nav-secondary">
+    <div class="nav-wrapper container">
+      <ul class="left hide-on-med-and-down navbar-links">
+      </ul>
+    </div>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
   </body>
 </html>

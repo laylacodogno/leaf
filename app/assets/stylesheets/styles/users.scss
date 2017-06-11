@@ -10,13 +10,13 @@
 
   }
   .card.card-large{
-    >.card-action{
-      > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).danger-btn{
-        color: $error-color;
-        &:hover{
-          color: $error-color-light;
-        }
-      }
+  >.card-action{
+    > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).danger-btn{
+    color: $error-color;
+    &:hover{
+      color: $error-color-light;
     }
+    }
+  }
   }
 }
