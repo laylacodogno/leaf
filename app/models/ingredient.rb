@@ -1,4 +1,6 @@
 class Ingredient < ApplicationRecord
+	has_many :recipe_items
+
 	belongs_to :user
 
 	validates :name, presence: true, length: { minimum: 3, unless: "name.blank?" },

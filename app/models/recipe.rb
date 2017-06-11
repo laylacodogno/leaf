@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
 	has_and_belongs_to_many :categories
+	
+	has_many :recipe_items
 
 	belongs_to :user
 
