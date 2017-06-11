@@ -1,4 +1,6 @@
 class Recipe < ApplicationRecord
+	has_and_belongs_to_many :categories
+
 	belongs_to :user
 
 	validates :title, presence: true, length: { minimum: 3, unless: "title.blank?" }
