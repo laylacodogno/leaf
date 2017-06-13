@@ -17,7 +17,8 @@
       <li><%= link_to 'Perfil', current_user %></li>
       <li><%= link_to 'Ingredientes', ingredients_path %></li>
       <li><%= link_to 'Categorias', categories_path %></li>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+      <li><%= link_to 'Receitas', recipes_path %></li>
+      <li class="nav-logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
     <% else %>
       <li><%= link_to('Login', new_user_session_path)  %></li>
     <% end %>
