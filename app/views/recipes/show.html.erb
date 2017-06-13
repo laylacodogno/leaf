@@ -14,7 +14,7 @@
       <div class="col s6 m2 recipe-info">
         <i class="material-icons">timer</i>
         <p class="label">preparo</p>
-        <p class="info"><%= @recipe.preparation_time %></p>
+        <p class="info"><%= show_time_only(@recipe.preparation_time) %></p>
       </div>
       <div class="col s6 m2 recipe-info">
         <i class="material-icons">room_service</i>

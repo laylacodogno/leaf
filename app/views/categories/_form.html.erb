@@ -23,8 +23,8 @@
 
   <div class="card-action">
     <%= link_to 'Voltar', categories_path %>
-    <% if @category.id.present? %>
-    <%= link_to 'Excluir', category, class: 'danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if @category.new_record? %>
+    <%= link_to 'Excluir', category, class: 'danger-btn', method: :delete, data: { confirm: 'Tem certeza?' } %>
     <% end %>
     <%= f.submit 'Salvar', class: 'right sucess-btn' %>
 

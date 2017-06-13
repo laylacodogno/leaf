@@ -8,12 +8,6 @@ class IngredientsController < ApplicationController
   # GET /ingredients.json
   def index
   @ingredients = Ingredient.where(user_id: current_user.id)
-
-  end
-
-  # GET /ingredients/1
-  # GET /ingredients/1.json
-  def show
   end
 
   # GET /ingredients/new
@@ -33,8 +27,7 @@ class IngredientsController < ApplicationController
 
   respond_to do |format|
     if @ingredient.save
-    format.html { redirect_to @ingredient, notice: 'Ingrediente salvo com sucesso!' }
-    format.json { render :show, status: :created, location: @ingredient }
+    format.html { redirect_to action: "index", notice: 'Ingrediente salvo com sucesso!' }
     else
     format.html { render :new }
     format.json { render json: @ingredient.errors, status: :unprocessable_entity }
@@ -49,8 +42,7 @@ class IngredientsController < ApplicationController
 
 
     if @ingredient.update(ingredient_params)
-    format.html { redirect_to @ingredient, notice: 'Ingrediente salvo com sucesso!' }
-    format.json { render :show, status: :ok, location: @ingredient }
+    format.html { redirect_to action: "index", notice: 'Ingrediente salvo com sucesso!' }
     else
     format.html { render :edit }
     format.json { render json: @ingredient.errors, status: :unprocessable_entity }

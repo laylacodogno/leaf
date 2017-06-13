@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_form_options, only: [:new, :create, :edit, :update]
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
@@ -74,5 +75,9 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(
       :title, :preparation_time, :servings, :directions, :user_id, {:category_ids => []}
     )
+  end
+
+  def set_form_options
+    @categories = Category.where(user_id: current_user.id)
   end
 end
