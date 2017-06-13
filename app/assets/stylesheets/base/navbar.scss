@@ -1,84 +1,91 @@
-nav.nav-primary{
+nav.nav-primary {
   background-image: image-url("pattern_amelia.jpg");
-  .nav-wrapper{
-  >.brand-logo{
-    height: 44px;
-    width: 220px;
-    background-image: image-url("ic-logo-leaf-background2.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 
-    &:hover{
-    background-color: transparent;
-    // background-image: url(ic-logo-leaf-background2.png);
-    }
-  }
-  > ul.navbar-links{
-    > li{
-    >.navbar-search{
-      position: relative;
-      input[type="search"]{
-      height: 30px;
-      font-size: 14px;
-      width: initial;
-      border-radius: 50px;
-      background-color: #ffffff;
-      box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
-      border: solid 1px $gray-special-color;
-
-      display: inline-block;
-      line-height: inherit;
-      padding-left: 2px;
-      padding-right: 20px;
-
-      text-indent: 20px;
-      }
-      .btn-search{
-      background-image: image-url("bttn-search.png");
-      background-repeat: no-repeat;
-      background-position-x: right;
-      background-size: contain;
-
-      position: absolute;
-      height: 30px;
-      width: 30px;
-      padding: 0;
-      background-color: transparent;
-      border: none;
-      right: 13px;
-      top: 9px;
-      }
-    }
-    >.link-dropdown{
-      width: 110px;
-
-      >i.ic-user{
-      display: block;
-      width: 35px;
-      margin: 0 auto;
-      background-image: image-url("ic-user.png");
+  .nav-wrapper {
+    > .brand-logo {
+      height: 44px;
+      width: 220px;
+      background-image: image-url("ic-logo-leaf-background2.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      &:hover {
+        background-color: transparent;
+        // background-image: url(ic-logo-leaf-background2.png);
       }
     }
+
+    > ul.navbar-links {
+      > li {
+        > .navbar-search {
+          position: relative;
+
+          input[type="search"] {
+            height: 30px;
+            font-size: 14px;
+            width: initial;
+            border-radius: 50px;
+            background-color: #ffffff;
+            box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
+            border: solid 1px $gray-special-color;
+            display: inline-block;
+            line-height: inherit;
+            padding-left: 2px;
+            padding-right: 20px;
+            text-indent: 20px;
+          }
+
+          .btn-search {
+            background-image: image-url("bttn-search.png");
+            background-repeat: no-repeat;
+            background-position-x: right;
+            background-size: contain;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            right: 13px;
+            top: 9px;
+          }
+        }
+
+        > .link-dropdown {
+          width: 110px;
+
+          > i.ic-user {
+            display: block;
+            width: 35px;
+            margin: 0 auto;
+            background-image: image-url("ic-user.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
     }
   }
-
-  }
 }
-nav.nav-secondary{
+
+nav.nav-secondary {
   background-color: white;
   -webkit-backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
- .navbar-links{
-  a{
-    text-transform: uppercase;
-    font-weight: bold;
-    min-width: 65px;
-    font-size: 12px;
+
+  .navbar-links {
+    a {
+      text-transform: uppercase;
+      font-weight: bold;
+      min-width: 65px;
+      font-size: 12px;
+    }
   }
-  }
+}
+
+#nav-user > .nav-logout > a {
+  color: $error-color;
 }
