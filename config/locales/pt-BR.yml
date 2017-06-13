@@ -16,6 +16,7 @@ pt-BR:
         preparation_time: tempo de preparo
         servings: número de porções
         directions: modo de preparo
+        categories: categorias
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

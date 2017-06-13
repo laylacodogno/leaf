@@ -20,7 +20,7 @@
 
       <div class="input-field col s12 m4">
         <!-- TODO: fazer maskara -->
-        <%= f.text_field :preparation_time,  id: 'preparation_time' %>
+        <%= f.text_field :preparation_time,  id: 'preparation_time', value: show_time_only(recipe.preparation_time) %>
         <label for="preparation_time">Tempo de Preparo</label>
       </div>
 
@@ -28,7 +28,7 @@
         <%= f.number_field :servings,  id: 'servings' %>
         <label for="servings">Porções</label>
       </div>
-      
+
       <div class="input-field col s12 m4">
         <select multiple name="recipe[category_ids][]" id="recipe_category_ids">
           <option value="" disabled selected>Escolha uma opção</option>
