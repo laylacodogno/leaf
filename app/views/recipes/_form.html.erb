@@ -30,54 +30,23 @@
       </div>
 
       <div class="input-field col s12 m4">
-        <select multiple name="recipe[category_ids][]" id="recipe_category_ids">
-          <option value="" disabled selected>Escolha uma opção</option>
-          <% @categories.each do |category|%>
-            <% if !@recipe.new_record? && @recipe.categories.include?(category) %>
-              <option value="<%= category.id %>" selected> <%= category.name %> </option>
-            <% else %>
-              <option value="<%= category.id %>"> <%= category.name %> </option>
-            <% end %>
-          <%end%>
-        </select>
-        <label>Categoria</label>
+        <%= f.select :category_ids, @categories.map{ |c| [c.name, c.id] }.unshift(["Escolha uma opção", "0"]), { disabled: '0' }, { multiple: true, id: 'category_ids' } %>
+        <label for="category_ids">Categorias</label>
       </div>
 
       <div class="col s12" id="ingredients">
-        <!-- <p>Ingredients</p> -->
-        <div class="input-field col s6 m7">
-          <select id="ingredient">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-          <label for="ingredient">Ingrediente</label>
-        </div>
+        <%= f.fields_for :recipe_items do |builder| %>
+          <%= render "recipe_item_fields", f: builder %>
+        <% end %>
 
-        <div class="input-field col s2 m2">
-          <input type="number" id="quant">
-          <label for="quant">Quantidade</label>
-        </div>
-
-        <div class="input-field col s3 m2">
-          <select id="unit">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-          <label for="unit">Unidade</label>
-        </div>
-
-        <div class="input-field col s1">
-          <a class="waves-effect waves-light btn btn-ingredient"><i class="material-icons">add</i></a>
+        <div class="input-field col s12">
+          <%= link_to_add_fields f, :recipe_items %>
         </div>
       </div>
 
       <div class="input-field col s12">
         <%= f.text_area :directions, id: 'directions', class: 'materialize-textarea' %>
-        <label for="directions">Modo de Prepato</label>
+        <label for="directions">Modo de Preparo</label>
       </div>
     </div>
 

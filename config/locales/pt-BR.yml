@@ -17,6 +17,11 @@ pt-BR:
         servings: número de porções
         directions: modo de preparo
         categories: categorias
+        recipe_items: ingredientes
+      recipe_items:
+          ingredient: ingrediente
+          measurement_unit: unidade
+          amount: quantidade
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
