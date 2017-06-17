@@ -14,7 +14,7 @@
       <div class="col s6 m2 recipe-info">
         <i class="material-icons">timer</i>
         <p class="label">preparo</p>
-        <p class="info"><%= @recipe.preparation_time %></p>
+        <p class="info"><%= show_time_only(@recipe.preparation_time) %></p>
       </div>
       <div class="col s6 m2 recipe-info">
         <i class="material-icons">room_service</i>
@@ -26,10 +26,9 @@
       <div class="col s12 recipe-ingredients">
         <h5 class="subtitle">Ingredientes</h5>
         <ul class="ingredients-list">
-          <li class="ingredient">150g Aveia</li>
-          <li class="ingredient">3 xícaras Óleo</li>
-          <li class="ingredient">150g Aveia</li>
-          <li class="ingredient">150g Aveia</li>
+          <% @recipe.recipe_items.each do |recipe_item| %>
+            <li class="ingredient"><%= show_recipe_item_full_name(recipe_item) %></li>
+          <% end %>         
         </ul>
       </div>
       <div class="col s12 recipe-directions">
