@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+textarea.materialize-textarea {
+  overflow-y: auto;
+  height: auto;
+  min-height: 130px;
+  max-height: none;
+}
+
 .select-wrapper + label {
   top: 10px;
 }
