@@ -1,3 +1,74 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card.card-medium {
+  .card-title {
+    padding: 2px 30px;
+    background-color: #fbfaf7;
+    border-bottom: 1px solid $primary-color;
+
+    > div.row {
+      margin-bottom: 8px;
+    }
+
+    > .title-name {
+      margin: 15px 0 5px;
+    }
+
+    .title-category,
+    .title-subtitle {
+      text-transform: none;
+      font-size: 11px;
+      line-height: 14px;
+      font-weight: normal;
+      color: #979797;
+      margin: 2px 0;
+    }
+
+    .title-category {
+      color: $secondary-color;
+      text-align: right;
+    }
+  }
+
+  .card-content {
+    background: url('pattern_card_450.png');
+    padding-left: 10%;
+
+    .recipe-ingredients {
+      p {
+        font-weight: bold;
+        color: $primary-color;
+      }
+
+      .ingredients-list {
+        font-size: 12px;
+
+        > li {
+          list-style-type: circle;
+        }
+      }
+    }
+
+    .recipe-info {
+      text-align: center;
+      padding: 10px;
+
+      > .material-icons {
+        font-size: 30px;
+        color: #979797;
+      }
+
+      > .label {
+        font-size: 10px;
+        color: #979797;
+        margin: 0;
+      }
+
+      > .info {
+        margin: 0;
+      }
+    }
+  }
+}
