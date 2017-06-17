@@ -1,8 +1,8 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-
   before_action :authenticate_user!
 
+  before_filter :require_permission, only: :edit
 
   # GET /ingredients
   # GET /ingredients.json
@@ -69,5 +69,11 @@ class IngredientsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def ingredient_params
     params.require(:ingredient).permit(:name, :user_id)
+  end
+
+  def require_permission
+    if current_user != Category.find(params[:id]).user
+      redirect_to root_path
+    end
   end
 end

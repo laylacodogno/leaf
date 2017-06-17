@@ -1,13 +1,14 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :set_form_options, only: [:new, :create, :edit, :update]
-
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+
+  before_filter :require_permission, only: :edit
 
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   # GET /recipes/1
@@ -77,6 +78,12 @@ class RecipesController < ApplicationController
       :title, :preparation_time, :servings, :directions, :user_id, {:category_ids => []}, 
       recipe_items_attributes: [:id, :ingredient_id, :amount, :measurement_unit_id, :_destroy]
     )
+  end
+
+  def require_permission
+    if current_user != Category.find(params[:id]).user
+      redirect_to root_path
+    end
   end
 
   def set_form_options
