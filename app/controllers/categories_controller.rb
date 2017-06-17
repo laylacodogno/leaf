@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # TODO: adicionar token do usuário logado para filtrar produtos e adicionar/editar para o usuário logado
+
+  before_filter :require_permission, only: :edit
 
   # GET /categories
   # GET /categories.json
@@ -64,5 +65,11 @@ class CategoriesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def category_params
     params.require(:category).permit(:name, :user_id)
+  end
+
+  def require_permission
+    if current_user != Category.find(params[:id]).user
+      redirect_to root_path
+    end
   end
 end

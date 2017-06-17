@@ -23,7 +23,7 @@
 
   <div class="card-action">
     <%= link_to 'Voltar', ingredients_path %>
-    <% if @ingredient.new_record? %>
+    <% if !@ingredient.new_record? %>
     <%= link_to 'Excluir', ingredient, class: 'danger-btn', method: :delete, data: { confirm: 'Tem certeza?' } %>
     <% end %>
     <%= f.submit 'Salvar', class: 'right sucess-btn' %>

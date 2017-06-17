@@ -40,6 +40,9 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x86-mingw32)
+    bower (0.0.5)
+      multi_json
     builder (3.2.3)
     byebug (9.0.6)
     concurrent-ruby (1.0.5)
@@ -169,6 +172,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bower
   byebug
   devise
   gravtastic
@@ -191,4 +195,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.13.7
+   1.14.6
