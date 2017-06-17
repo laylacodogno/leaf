@@ -4,6 +4,6 @@
   "main": "",
   "private": true,
   "dependencies": {
-    "materialize-clockpicker": "^0.1.1"
+    "jquery-mask-plugin": "^1.14.11"
   }
 }

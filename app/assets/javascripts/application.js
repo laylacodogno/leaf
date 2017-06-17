@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize-sprockets
-//= require materialize-clockpicker/dist/js/materialize.clockpicker
+//= require jquery-mask-plugin/dist/jquery.mask
 //= require_tree .
 
 $(document).ready(function() {

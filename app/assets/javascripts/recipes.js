@@ -4,11 +4,7 @@
 $(document).ready(function() {
 	$("#ingredients > .ingredients-attr > .input-field > input[type=hidden]").val(false);
 
-	$('.timepicker').pickatime({
-    autoclose: true,
-    twelvehour: false,
-    donetext: 'Continuar',
-  });
+	$('.timepicker').mask('00:00');
 
 	$(document).on('click', '.btn-remove', function(event){
 		console.log('asdasd')
