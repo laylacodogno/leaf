@@ -5,6 +5,6 @@ module DateTimeFormatterHelper
 	  	date.strftime("%H:%M")
   	end
 
-	  formatted_date
+		formatted_date
   end
 end
