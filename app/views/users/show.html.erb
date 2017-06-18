@@ -1,30 +1,30 @@
 <div class="container">
   <div class="row user">
-  <h1 class="s12 page-title">Usuário</h1>
+  <p class="user-recipe-title">Receitas de</p>
+  <h1 class="s12 page-title"><%= @user.name %> <% if @user.id == current_user.id %>
+    <%= link_to 'Editar', edit_user_path(@user), class: 'primary-btn edit-link' %>
+  <% end %></h1>
 
   <div class="notice-container">
     <p id="notice"><%= notice %></p>
   </div>
-
-  <div class="s12 card card-large">
-    <div class="user-info">
-    <p>
-      <strong>Nome:</strong>
-      <%= @user.name %>
-    </p>
-
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card card-medium">
+        <div class="card-title">
+          <p class="title-name">Título receita</p>
+          <div class="row">
+            <p class="title-subtitle col s6">por Layla Codogno</p>
+            <p class="title-category col s6">Sobremesa</p>
+          </div>
+        </div>
+      
+      <div class="card-action">
+      <A>VER RECEITA COMPLETA</A>
+      </div>
+      </div>
     </div>
-
-    <% if @user.id == current_user.id %>
-    <div class="card-action">
-      <%= link_to 'Editar', edit_user_path(@user), class: 'primary-btn' %>
-    </div>
-    <% end %>
-
   </div>
+
   </div>
 </div>
