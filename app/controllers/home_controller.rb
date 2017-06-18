@@ -7,10 +7,12 @@ class HomeController < ApplicationController
     @categories = Category.all
     @recipes = Recipe.order('created_at desc')
 
-    if params[:category_ids].present?
-      @recipes = @recipes.includes(:categories).where(categories: {id: params[:category_ids]})
+    if params[:query].present?
+      @recipes = @recipes.includes(:categories)
+      .where(
+        'lower(recipes.title) LIKE ? OR lower(categories.name) LIKE ?', 
+        "%#{params[:query].downcase}%", "%#{params[:query].downcase}%"
+      ).references(:categories)
     end
-
   end
-
 end

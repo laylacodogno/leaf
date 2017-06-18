@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <% if !@recipes.any? %>
+      <h1>NÂO TEM NADA</h1>
+    <% end %>
     <% @recipes.find_each do |recipe| %>
     <div class="col s12 m6">
       <div class="card card-medium">
