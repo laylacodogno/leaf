@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @recipes = Recipe.where(user_id: params[:id])
   end
 
   # GET /users/1/edit

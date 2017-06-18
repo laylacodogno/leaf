@@ -1,71 +1,80 @@
-[class*="danger-"]{
+[class*="danger-"] {
   color: $error-color;
 }
-[class*="sucess-"]{
+
+[class*="sucess-"] {
   color: $success-color;
 }
-[class*="primary-"]{
+
+[class*="primary-"] {
   color: $primary-color;
 }
-[class*="secondary-"]{
+
+[class*="secondary-"] {
   color: $secondary-color;
 }
 
-.btn-action{
+.btn-action {
   margin-right: 24px;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
   text-transform: uppercase;
 }
 
-.primary-link{
+.primary-link {
   font-family: $primary-font-family;
   text-transform: uppercase;
   color: #b8c0c3;
-  &:active, &:hover, &:focus{
-  color: $primary-color;
-  background-color: transparent;
-  border-bottom: 2px solid $primary-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $primary-color;
+    background-color: transparent;
+    border-bottom: 2px solid $primary-color;
   }
 }
-.secondary-link{
+
+.secondary-link {
   font-family: $primary-font-family;
-  &:active, &:hover, &:focus{
-  color: #b8c0c3;
-  background-color: transparent;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: #b8c0c3;
+    background-color: transparent;
   }
 }
 
 input:not([type]),
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=time],
 input[type=date],
-input[type=datetime],
 input[type=datetime-local],
-input[type=tel],
+input[type=datetime],
+input[type=email],
 input[type=number],
+input[type=password],
 input[type=search],
-textarea.materialize-textarea{
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+textarea.materialize-textarea {
   // height: 20px;
   // max-height: 30px;
   // font-size: 14px;
-
-  &:focus{
-  box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
+  &:focus {
+    box-shadow: inset 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.9);
   }
-  &.primary-input{
-  border-radius: 50px;
-  line-height: inherit;
-  border: 1px solid $primary-color;
-  background-color: white;
 
+  &.primary-input {
+    border-radius: 50px;
+    line-height: inherit;
+    border: 1px solid $primary-color;
+    background-color: white;
   }
-  &.minimal-input{
-  line-height: inherit;
-  background-color: transparent;
 
+  &.minimal-input {
+    line-height: inherit;
+    background-color: transparent;
   }
 }
 // input:not([type]):focus:not([readonly]) + label,
@@ -85,63 +94,66 @@ textarea.materialize-textarea{
 //   font-size: 10px;
 // }
 
-
-.card{
+.card {
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px #ffffff;
-  .card-action{
-  > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
-    @extend .btn-action;
-  }
-  input[type=submit]{
-    @extend .btn-action;
-    @extend .btn;
-  }
-  }
-  .card-title{
-  font-family: $primary-font-family;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 1.11;
-  letter-spacing: normal;
-  color: #696e6f;
-  }
 
-  &.card-large{
-  padding: 15px;
-  }
-
-  &.card-medium{
-
-  }
-  &.card-small{
-
-  }
-}
-table{
-  tr{
-  td{
-    .btn-action{
-    font-size: 11px;
+  .card-action {
+    > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+      @extend .btn-action;
     }
-    &.taction{
-    width: 120px;
-    text-align: center;
+
+    input[type=submit] {
+      @extend .btn-action;
+      @extend .btn;
     }
   }
+
+  .card-title {
+    font-family: $primary-font-family;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #696e6f;
+  }
+
+  &.card-large {
+    padding: 15px;
+  }
+
+  &.card-medium {}
+
+  &.card-small {}
+}
+
+table {
+  tr {
+    td {
+      .btn-action {
+        font-size: 11px;
+      }
+
+      &.taction {
+        width: 120px;
+        text-align: center;
+      }
+    }
   }
 }
-.img-container{
+
+.img-container {
   background-color: white;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   border: solid 3.5px #ffffff;
   padding: 5px;
-  img{
-  max-width: 100%;
-  margin: 0 auto;
-  vertical-align: middle;
+
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
   }
 }

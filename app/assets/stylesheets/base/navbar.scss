@@ -82,6 +82,11 @@ nav.nav-secondary {
       font-weight: bold;
       min-width: 65px;
       font-size: 12px;
+      color: $primary-color;
+
+      &.active {
+        border-bottom: 1px solid $primary-color;
+      }
     }
   }
 }

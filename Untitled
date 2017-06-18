@@ -1,0 +1,22 @@
+DECLARE
+	a number;
+	b number;
+	c number;
+	raiz1 number;
+	raiz2 number;
+	delt number;
+	PROCEDURE baskara(a IN number,b IN number, c in NUMBER, raiz1 OUT number, raiz2 OUT number) IS
+	BEGIN
+		delt := (b*b) - (4*a*c);
+		raiz1:= (-b + SQRT(delt))/(2*a);
+		raiz2:= (-b - SQRT(delt))/(2*a);
+END;
+
+
+BEGIN
+		a:=2;
+		b:=4;
+		c:=2;
+		baskara(a,b,c,raiz1,raiz2);
+		dbms_output.put_line('Raiz 1:' || raiz1 || ' e Raiz 2:' || raiz2);
+END;
