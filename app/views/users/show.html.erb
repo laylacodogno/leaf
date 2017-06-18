@@ -9,21 +9,23 @@
     <p id="notice"><%= notice %></p>
   </div>
   <div class="row">
+    <% @recipes.each do |recipe| %>
     <div class="col s12 m6">
       <div class="card card-medium">
         <div class="card-title">
-          <p class="title-name">Título receita</p>
+          <p class="title-name"><%= recipe.title %></p>
           <div class="row">
-            <p class="title-subtitle col s6">por Layla Codogno</p>
-            <p class="title-category col s6">Sobremesa</p>
+            <p class="title-subtitle col s6">por <%= recipe.user.name %></p>
+            <p class="title-category col s6"><%= recipe.categories.collect { |c| c.name }.join(', ') %></p>
           </div>
         </div>
-      
+
       <div class="card-action">
-      <A>VER RECEITA COMPLETA</A>
+        <%= link_to 'VER RECEITA COMPLETA', recipe_path(recipe)  %>
       </div>
       </div>
     </div>
+    <% end %>
   </div>
 
   </div>
