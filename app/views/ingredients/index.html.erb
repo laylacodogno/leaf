@@ -20,7 +20,7 @@
       <tr>
         <td><%= ingredient.name %></td>
         <td class="taction"><%= link_to 'Editar', edit_ingredient_path(ingredient), class: 'btn-action primary-btn' %></td>
-        <td class="taction"><%= link_to 'Excluir', ingredient, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="taction"><%= link_to 'Excluir', ingredient, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
       <% end %>
     </tbody>

@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
 	has_many :ingredients
 	has_many :categories
+	has_many :recipes
 
 	attr_accessor :login
 

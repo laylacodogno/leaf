@@ -1,17 +1,13 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # TODO: adicionar token do usuário logado para filtrar produtos e adicionar/editar para o usuário logado
+
+  before_filter :require_permission, only: :edit
 
   # GET /categories
   # GET /categories.json
   def index
-  @categories = Category.all
-  end
-
-  # GET /categories/1
-  # GET /categories/1.json
-  def show
+  @categories = Category.where(user_id: current_user.id)
   end
 
   # GET /categories/new
@@ -30,8 +26,7 @@ class CategoriesController < ApplicationController
 
   respond_to do |format|
     if @category.save
-    format.html { redirect_to @category, notice: 'Categoria salva com sucesso!' }
-    format.json { render :show, status: :created, location: @category }
+    format.html { redirect_to action: "index", notice: 'Categoria salva com sucesso!' }
     else
     format.html { render :new }
     format.json { render json: @category.errors, status: :unprocessable_entity }
@@ -44,8 +39,7 @@ class CategoriesController < ApplicationController
   def update
   respond_to do |format|
     if @category.update(category_params)
-    format.html { redirect_to @category, notice: 'Categoria salva com sucesso!' }
-    format.json { render :show, status: :ok, location: @category }
+    format.html { redirect_to action: "index", notice: 'Categoria salva com sucesso!' }
     else
     format.html { render :edit }
     format.json { render json: @category.errors, status: :unprocessable_entity }
@@ -71,5 +65,11 @@ class CategoriesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def category_params
     params.require(:category).permit(:name, :user_id)
+  end
+
+  def require_permission
+    if current_user != Category.find(params[:id]).user
+      redirect_to root_path
+    end
   end
 end

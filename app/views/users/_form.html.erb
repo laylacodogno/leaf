@@ -1,39 +1,37 @@
 <%= form_for(user) do |f| %>
-
   <% if user.errors.any? %>
-  <div id="error_explanation">
-    <ul class="error_messages">
-    <% user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
+    <div id="error_explanation">
+      <ul class="error_messages">
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <div class="s12 card card-large">
-  <div class="row">
-    <div class="input-field col s12">
-    <i class="material-icons prefix">account_circle</i>
-    <%= f.text_field :name,  id: 'name' %>
-    <label for="name">Nome</label>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <%= f.text_field :name,  id: 'name' %>
+        <label for="name">Nome</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <%= f.text_field :email, id: 'email' %>
+        <label for="email">E-mail</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">map</i>
+        <%= f.select :state, User.states.keys, prompt: 'Escolha uma opção', label: false, id: 'state' %>
+      </div>
     </div>
 
-    <div class="input-field col s12">
-    <i class="material-icons prefix">email</i>
-    <%= f.text_field :email, id: 'email' %>
-    <label for="email">E-mail</label>
+    <div class="card-action">
+      <%= link_to 'Voltar', user  %>
+      <%= f.submit 'Salvar', class: 'right sucess-btn' %>
     </div>
-
-    <div class="input-field col s12">
-    <i class="material-icons prefix">map</i>
-    <%= f.select :state, User.states.keys, prompt: 'Estado', label: false, id: 'state' %>
-    </div>
-  </div>
-
-  <div class="card-action">
-    <%= link_to 'Voltar', user  %>
-    <%= f.submit 'Salvar', class: 'right sucess-btn' %>
-
-  </div>
   </div>
 <% end %>
