@@ -3,11 +3,6 @@ Leaf - Caderno de Receitas
 
 O objetivo geral deste projeto é implementar um sistema dentro da metodologia ágil Scrum, utilizando a linguagem de programação Ruby junto o framework Rails, que possibilite o cadastro de receitas bem como fazer sua gestão e a montagem de cardápios gerando uma lista de compras.
 
-<!-- This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover: -->
-
 * Ruby version
   ruby 2.3.0
 
@@ -16,19 +11,18 @@ Things you may want to cover: -->
 
 * PostgreSQL version
   PostgreSQL 9.6
+  
+## Configuração
+clone o repositório ou faça download.
 
-<!-- * System dependencies
+### Rails
+`bundle install`
 
-* Configuration
+### JS
+`bower install`
 
-* Database creation
+### Banco de dados
+`rails db:create` `rails db:migrate` `rails db:seed`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
+### Servidor local
+para rodar o servidor localmente basta dar o comando `rails s` e acessar a porta configurada.
