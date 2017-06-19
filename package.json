@@ -1,25 +1,8 @@
 {
   "name": "leaf",
+  "description": "",
   "version": "1.0.0",
-  "description": "Leaf - Caderno de Receitas",
-  "main": "index.js",
-  "directories": {
-    "test": "test",
-    "bower": "~1.0",
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node web.js",
-    "postinstall": "bower cache clean && bower install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laylacodogno/leaf.git"
-  },
-  "author": "Layla Codogno",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/laylacodogno/leaf/issues"
-  },
-  "homepage": "https://github.com/laylacodogno/leaf#readme"
+  "engines": {
+    "npm": "2.1.0"
+  }
 }
