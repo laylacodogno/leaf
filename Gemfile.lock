@@ -41,8 +41,6 @@ GEM
     arel (7.1.4)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
-    bower (0.0.5)
-      multi_json
     builder (3.2.3)
     byebug (9.0.6)
     concurrent-ruby (1.0.5)
@@ -172,7 +170,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bower
   byebug
   devise
   gravtastic

@@ -12,6 +12,7 @@ module Leaf
 	config.i18n.default_locale = 'pt-BR'
 	config.time_zone = 'Brasilia'
 	config.active_record.default_timezone = :local
+	config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
