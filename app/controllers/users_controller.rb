@@ -27,7 +27,6 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-  # @user = User.find(params[:id])
   @user.destroy
   respond_to do |format|
     format.html { redirect_to users_url, notice: 'Usuário excluido com sucesso!' }

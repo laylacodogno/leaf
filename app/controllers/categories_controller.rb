@@ -68,6 +68,7 @@ class CategoriesController < ApplicationController
   end
 
   def require_permission
+    teste =
     if current_user != Category.find(params[:id]).user
       redirect_to root_path
     end
