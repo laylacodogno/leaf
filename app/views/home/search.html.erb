@@ -1,15 +1,27 @@
 <div class="container">
   <div class="row">
     <%= form_for(:search, method: :get) do |f| %>
-      <%= select_tag "category_ids",
-          options_from_collection_for_select(@categories, "id", "name", params[:category_ids]),
-          multiple: true, include_blank: true %>
-      <div class="card-action">
-        <%= f.submit 'Buscar', class: 'right sucess-btn' %>
+      <div class="col s12 card card-search">
+        <div class="card-content">
+          <div class="row">
+            <div class="input-field col s10">
+              <%= text_field_tag :query %>
+              <label for="query">Pesquise pelo título ou categorias de uma receita</label>
+            </div>
+            <div class="search-button col s2">
+              <%= f.submit 'Buscar', class: 'btn sucess-btn' %>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
   <div class="row">
+    <% if !@recipes.any? %>
+      <div class="empty-list">
+        <h4><i class="material-icons">info_outline</i> Ops, ainda não temos nada aqui.</h4>
+      </div>
+    <% end %>
     <% @recipes.find_each do |recipe| %>
     <div class="col s12 m6">
       <div class="card card-medium">

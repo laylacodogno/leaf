@@ -20,6 +20,53 @@ begin
 			password_confirmation: "qwerty"
 		)
 
+		Ingredient.create(
+			name: 'Ovo',
+			normalized_name: 'Ovo'.parameterize,
+			user_id: user_pedro.id
+		)
+		Ingredient.create(
+			name: 'Farinha de Trigo',
+			normalized_name: 'Farinha de Trigo'.parameterize,
+			user_id: user_pedro.id
+		)
+		Ingredient.create(
+			name: 'Água',
+			normalized_name: 'Água'.parameterize,
+			user_id: user_pedro.id
+		)
+		Ingredient.create(
+			name: 'Óleo Vegetal',
+			normalized_name: 'Óleo Vegetal'.parameterize,
+			user_id: user_pedro.id
+		)
+		Ingredient.create(
+			name: 'Azeite de Oliva',
+			normalized_name: 'Azeite de Oliva'.parameterize,
+			user_id: user_pedro.id
+		)
+
+		Category.create(
+			name: 'Entradas',
+			normalized_name: 'Entradas'.parameterize,
+			user_id: user_pedro.id
+		)
+		Category.create(
+			name: 'Pratos Principais',
+			normalized_name: 'Pratos Principais'.parameterize,
+			user_id: user_pedro.id
+		)
+		Category.create(
+			name: 'Sobremesas',
+			normalized_name: 'Sobremesas'.parameterize,
+			user_id: user_pedro.id
+		)
+		Category.create(
+			name: 'Salgados',
+			normalized_name: 'Salgados'.parameterize,
+			user_id: user_pedro.id
+		)
+
 		user_layla = User.create(
 			name: 'Layla Cristine de Oliveira Codogno',
 			email: 'layla.codogno@gmail.com',
@@ -28,42 +75,51 @@ begin
 			password_confirmation: "qwerty"
 		)
 
-		CommonIngredient.create(
+		Ingredient.create(
 			name: 'Ovo',
-			normalized_name: 'Ovo'.parameterize
+			normalized_name: 'Ovo'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonIngredient.create(
+		Ingredient.create(
 			name: 'Farinha de Trigo',
-			normalized_name: 'Farinha de Trigo'.parameterize
+			normalized_name: 'Farinha de Trigo'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonIngredient.create(
+		Ingredient.create(
 			name: 'Água',
-			normalized_name: 'Água'.parameterize
+			normalized_name: 'Água'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonIngredient.create(
+		Ingredient.create(
 			name: 'Óleo Vegetal',
-			normalized_name: 'Óleo Vegetal'.parameterize
+			normalized_name: 'Óleo Vegetal'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonIngredient.create(
+		Ingredient.create(
 			name: 'Azeite de Oliva',
-			normalized_name: 'Azeite de Oliva'.parameterize
+			normalized_name: 'Azeite de Oliva'.parameterize,
+			user_id: user_layla.id
 		)
 
-		CommonCategory.create(
+		Category.create(
 			name: 'Entradas',
-			normalized_name: 'Entradas'.parameterize
+			normalized_name: 'Entradas'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonCategory.create(
+		Category.create(
 			name: 'Pratos Principais',
-			normalized_name: 'Pratos Principais'.parameterize
+			normalized_name: 'Pratos Principais'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonCategory.create(
+		Category.create(
 			name: 'Sobremesas',
-			normalized_name: 'Sobremesas'.parameterize
+			normalized_name: 'Sobremesas'.parameterize,
+			user_id: user_layla.id
 		)
-		CommonCategory.create(
+		Category.create(
 			name: 'Salgados',
-			normalized_name: 'Salgados'.parameterize
+			normalized_name: 'Salgados'.parameterize,
+			user_id: user_layla.id
 		)
 
 		MeasurementUnit.create(

@@ -81,7 +81,7 @@ class RecipesController < ApplicationController
   end
 
   def require_permission
-    if current_user != Category.find(params[:id]).user
+    if current_user != Recipe.find(params[:id]).user
       redirect_to root_path
     end
   end
