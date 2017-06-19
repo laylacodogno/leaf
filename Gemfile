@@ -42,8 +42,6 @@ gem 'gravtastic'
 # Devise for auth
 gem 'devise'
 
-# Bower fo js dependencies
-gem 'bower'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
