@@ -1,6 +1,6 @@
 module RecipesHelper
 	def show_recipe_item_full_name(recipe_item)
-		full_name = recipe_item.amount.to_s
+		full_name = recipe_item.amount.floor.to_s
 		if recipe_item.measurement_unit.name.length > 2
 			full_name +=  " " + recipe_item.measurement_unit.name.pluralize + " de "
 		else
