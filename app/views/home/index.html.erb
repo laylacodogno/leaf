@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <% if !@recipes.any? %>
-      <h1>NÂO TEM NADA</h1>
+      <div class="empty-list">
+        <h4><i class="material-icons">info_outline</i> Ops, ainda não temos nada aqui.</h4>
+      </div>
     <% end %>
     <% @recipes.find_each do |recipe| %>
     <div class="col s12 m6">

@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.empty-list {
+  color: #979797;
+  padding: 10px;
+  border: 1px dashed;
+
+  i.material-icons {
+    font-size: 30px;
+  }
+}
+
+.card.card-search {
+  > .card-content {
+    padding: 5px;
+
+    .search-button {
+      height: 66px;
+      padding-top: 30px;
+    }
+  }
+}
+
 .card.card-medium {
   .card-title {
     padding: 2px 30px;
