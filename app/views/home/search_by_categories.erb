@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= form_for(:search, method: :get) do |f| %>
+    <%= form_for(:search_by_categories, method: :get) do |f| %>
       <div class="col s12 card card-search">
         <div class="card-content">
           <div class="row">
@@ -32,33 +32,33 @@
             <p class="title-category col s6"><%= recipe.categories.collect { |c| c.name }.join(', ') %></p>
           </div>
         </div>
-      <div class="card-content">
-        <div class="row">
-          <div class="col s12 m8 recipe-ingredients">
-            <p>Ingredientes</p>
-            <ul class="ingredients-list">
-              <% recipe.recipe_items.limit(8).find_each do |recipe_item| %>
-                <li class="ingredient"><%= show_recipe_item_full_name(recipe_item) %></li>
-              <% end %>
-            </ul>
-          </div>
-          <div class="col s12 m4">
-            <div class="col s6 m12 recipe-info">
-              <i class="material-icons">timer</i>
-              <p class="label">preparo</p>
-              <p class="info"><%= show_time_only(recipe.preparation_time) %></p>
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12 m8 recipe-ingredients">
+              <p>Ingredientes</p>
+              <ul class="ingredients-list">
+                <% recipe.recipe_items.limit(8).find_each do |recipe_item| %>
+                  <li class="ingredient"><%= show_recipe_item_full_name(recipe_item) %></li>
+                <% end %>
+              </ul>
             </div>
-            <div class="col s6 m12 recipe-info">
-              <i class="material-icons">room_service</i>
-              <p class="label">porções</p>
-              <p class="info"><%= recipe.servings %></p>
+            <div class="col s12 m4">
+              <div class="col s6 m12 recipe-info">
+                <i class="material-icons">timer</i>
+                <p class="label">preparo</p>
+                <p class="info"><%= show_time_only(recipe.preparation_time) %></p>
+              </div>
+              <div class="col s6 m12 recipe-info">
+                <i class="material-icons">room_service</i>
+                <p class="label">porções</p>
+                <p class="info"><%= recipe.servings %></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-action">
-        <%= link_to 'VER RECEITA COMPLETA', recipe_path(recipe)  %>
-      </div>
+        <div class="card-action">
+          <%= link_to 'VER RECEITA COMPLETA', recipe_path(recipe)  %>
+        </div>
       </div>
     </div>
     <% end %>

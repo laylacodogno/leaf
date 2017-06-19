@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :ingredients
   resources :users
 
-  get 'search' => 'home#search', as: :search
+  get 'search_by_categories' => 'home#search_by_categories', as: :search_by_categories
+  get 'search_by_users' => 'home#search_by_users', as: :search_by_users
 
   root :to => "home#index"
 
