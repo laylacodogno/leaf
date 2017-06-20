@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row user">
   <p class="user-recipe-title">Receitas de</p>
-  <h1 class="s12 page-title"><%= @user.name %> <% if @user.id == current_user.id %>
+  <h1 class="s12 page-title"><%= @user.name %> <% if current_user.present? && @user.id == current_user.id %>
     <%= link_to 'Editar', edit_user_path(@user), class: 'primary-btn edit-link' %>
   <% end %></h1>
 

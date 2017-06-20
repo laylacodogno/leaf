@@ -92,4 +92,17 @@
       }
     }
   }
+
+  &.user-card {
+    > .card-title {
+      background-color: $primary-color;
+      color: white;
+      height: 80px;
+      max-height: 80px;
+
+      a {
+        color: white;
+      }
+    }
+  }
 }
