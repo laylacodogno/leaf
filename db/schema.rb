@@ -64,11 +64,11 @@ ActiveRecord::Schema.define(version: 20170611214120) do
   end
 
   create_table "measurement_units", force: :cascade do |t|
-    t.string   "name",                null: false
-    t.integer  "measurement_unit_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.index ["measurement_unit_id"], name: "index_measurement_units_on_measurement_unit_id", using: :btree
+    t.string   "name",                         null: false
+    t.integer  "superior_measurement_unit_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["superior_measurement_unit_id"], name: "index_measurement_units_on_superior_measurement_unit_id", using: :btree
   end
 
   create_table "recipe_items", force: :cascade do |t|
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20170611214120) do
   add_foreign_key "ingredients", "users"
   add_foreign_key "measurement_unit_conversions", "measurement_units", column: "from_measurement_unit_id"
   add_foreign_key "measurement_unit_conversions", "measurement_units", column: "to_measurement_unit_id"
-  add_foreign_key "measurement_units", "measurement_units"
+  add_foreign_key "measurement_units", "measurement_units", column: "superior_measurement_unit_id"
   add_foreign_key "recipe_items", "ingredients"
   add_foreign_key "recipe_items", "measurement_units"
   add_foreign_key "recipe_items", "recipes"
