@@ -23,48 +23,48 @@ begin
 		Ingredient.create(
 			name: 'Ovo',
 			normalized_name: 'Ovo'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Ingredient.create(
 			name: 'Farinha de Trigo',
 			normalized_name: 'Farinha de Trigo'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Ingredient.create(
 			name: 'Água',
 			normalized_name: 'Água'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Ingredient.create(
 			name: 'Óleo Vegetal',
 			normalized_name: 'Óleo Vegetal'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Ingredient.create(
 			name: 'Azeite de Oliva',
 			normalized_name: 'Azeite de Oliva'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 
 		Category.create(
 			name: 'Entradas',
 			normalized_name: 'Entradas'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Category.create(
 			name: 'Pratos Principais',
 			normalized_name: 'Pratos Principais'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Category.create(
 			name: 'Sobremesas',
 			normalized_name: 'Sobremesas'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 		Category.create(
 			name: 'Salgados',
 			normalized_name: 'Salgados'.parameterize,
-			user_id: user_pedro.id
+			user: user_pedro
 		)
 
 		user_layla = User.create(
@@ -78,66 +78,69 @@ begin
 		Ingredient.create(
 			name: 'Ovo',
 			normalized_name: 'Ovo'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Ingredient.create(
 			name: 'Farinha de Trigo',
 			normalized_name: 'Farinha de Trigo'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Ingredient.create(
 			name: 'Água',
 			normalized_name: 'Água'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Ingredient.create(
 			name: 'Óleo Vegetal',
 			normalized_name: 'Óleo Vegetal'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Ingredient.create(
 			name: 'Azeite de Oliva',
 			normalized_name: 'Azeite de Oliva'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 
 		Category.create(
 			name: 'Entradas',
 			normalized_name: 'Entradas'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Category.create(
 			name: 'Pratos Principais',
 			normalized_name: 'Pratos Principais'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Category.create(
 			name: 'Sobremesas',
 			normalized_name: 'Sobremesas'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 		Category.create(
 			name: 'Salgados',
 			normalized_name: 'Salgados'.parameterize,
-			user_id: user_layla.id
+			user: user_layla
 		)
 
 		MeasurementUnit.create(
 			name: 'Unidade',
+			superior_measurement_unit: MeasurementUnit.new
 		)
 		measurement_unit_kg = MeasurementUnit.create(
-			name: 'Kg'
+			name: 'Kg',
+			superior_measurement_unit: MeasurementUnit.new
 		)
 		measurement_unit_g = MeasurementUnit.create(
 			name: 'g',
-			measurement_unit: measurement_unit_kg
+			superior_measurement_unit: measurement_unit_kg
 		)
 		measurement_unit_l = MeasurementUnit.create(
-			name: 'L'
+			name: 'L',
+			superior_measurement_unit: MeasurementUnit.new
 		)
 		measurement_unit_ml = MeasurementUnit.create(
 			name: 'ml',
-			measurement_unit: measurement_unit_l
+			superior_measurement_unit: measurement_unit_l
 		)
 
 		MeasurementUnitConversion.create(
