@@ -1,37 +1,62 @@
 <%= form_for(recipe) do |f| %>
   <% if recipe.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
-    <ul>
-    <% recipe.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
+    <div id="error_explanation">
+      <ul class="error_messages">
+        <% recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <div class="field">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="col s12 card card-large">
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title,  id: 'title' %>
+        <label for="title">Título</label>
+      </div>
+
+      <div class="input-field col s12 m4">
+        <%= f.text_field :preparation_time,  id: 'preparation_time', value: show_time_only(recipe.preparation_time), class: 'timepicker' %>
+        <label for="preparation_time">Tempo de Preparo</label>
+      </div>
+
+      <div class="input-field col s12 m4">
+        <%= f.number_field :servings,  id: 'servings' %>
+        <label for="servings">Porções</label>
+      </div>
+
+      <div class="input-field col s12 m4">
+        <%= f.select :category_ids, @categories.map{ |c| [c.name, c.id] }.unshift(["Escolha uma opção", "0"]), { disabled: '0' }, { multiple: true, id: 'category_ids' } %>
+        <label for="category_ids">Categorias</label>
+      </div>
+
+      <div class="col s12" id="ingredients">
+        <%= f.fields_for :recipe_items do |builder| %>
+          <%= render "recipe_item_fields", f: builder %>
+        <% end %>
+
+        <div class="input-field col s12">
+          <%= link_to_add_fields f, :recipe_items %>
+        </div>
+      </div>
+
+      <div class="input-field col s12">
+        <%= f.text_area :directions, id: 'directions', class: 'materialize-textarea' %>
+        <label for="directions">Modo de Preparo</label>
+      </div>
+    </div>
+
+    <div class="card-action">
+      <%= link_to 'Voltar', recipes_path %>
+      <% if !@recipe.new_record? %>
+        <%= link_to 'Excluir', recipe, class: 'danger-btn', method: :delete, data: { confirm: 'Tem certeza?' } %>
+      <% end %>
+      <%= f.submit 'Salvar', class: 'right sucess-btn' %>
+
+    </div>
   </div>
 
-  <div class="field">
-  <%= f.label :preparation_time %>
-  <%= f.time_select :preparation_time %>
-  </div>
-
-  <div class="field">
-  <%= f.label :servings %>
-  <%= f.number_field :servings %>
-  </div>
-
-  <div class="field">
-  <%= f.label :directions %>
-  <%= f.text_field :directions %>
-  </div>
-
-  <div class="actions">
-  <%= f.submit %>
-  </div>
 <% end %>

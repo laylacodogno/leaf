@@ -1,33 +1,40 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
+<div class="container">
+  <div class="row recipes">
+  <h1 class="s12 page-title">Receitas</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Preparation time</th>
-    <th>Servings</th>
-    <th>Directions</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
 
-  <tbody>
-  <% @recipes.each do |recipe| %>
-    <tr>
-    <td><%= recipe.title %></td>
-    <td><%= show_time_only(recipe.preparation_time) %></td>
-    <td><%= recipe.servings %></td>
-    <td><%= recipe.directions %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+  <div class="s12 card card-large">
+    <table id="table-user">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Tempo de Preparo</th>
+        <th>Porções</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.title %></td>
+        <td><%= show_time_only(recipe.preparation_time) %></td>
+        <td><%= recipe.servings %></td>
+        <td class="taction"><%= link_to 'Visualizar', recipe_path(recipe), class: 'btn-action primary-btn'  %></td>
+        <td class="taction"><%= link_to 'Editar', edit_recipe_path(recipe), class: 'btn-action primary-btn'  %></td>
+        <td class="taction"><%= link_to 'Excluir', recipe, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
 
-<br>
+    </table>
+    <div class="card-action right-align">
+    <%= link_to 'Nova Receita', new_recipe_path, class: 'primary-btn' %>
+    </div>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+  </div>
+  </div>
+</div>

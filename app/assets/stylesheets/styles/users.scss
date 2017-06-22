@@ -2,21 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user{
-  .page-title{
+.user {
+  .user-recipe-title {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+  }
 
-  }
-  .notice-container{
+  .page-title {
+    font-size: 28px;
+    margin: 5px 0;
 
-  }
-  .card.card-large{
-  >.card-action{
-    > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).danger-btn{
-    color: $error-color;
-    &:hover{
-      color: $error-color-light;
-    }
+    > a.edit-link {
+      font-size: 14px;
+      font-weight: bold;
     }
   }
+
+  .notice-container {}
+
+  .card.card-large {
+    > .card-action {
+      > a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).danger-btn {
+        color: $error-color;
+
+        &:hover {
+          color: $error-color-light;
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,11 @@
-<h1>Editing Recipe</h1>
+<div class="container">
+  <div class="row recipe">
+  <h2 class="s12 page-title">Editar Receita</h2>
 
-<%= render 'form', recipe: @recipe %>
+  <div class="notice-container">
+    <p id="notice"><%= notice %></p>
+  </div>
+  <%= render 'form', recipe: @recipe %>
 
-<%= link_to 'Show', @recipe %> |
-<%= link_to 'Back', recipes_path %>
+  </div>
+</div>

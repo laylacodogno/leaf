@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <%= form_for(:search_by_users, method: :get) do |f| %>
+      <div class="col s12 card card-search">
+        <div class="card-content">
+          <div class="row">
+            <div class="input-field col s10">
+              <%= text_field_tag :query %>
+              <label for="query">Pesquise pelo nome do usuário</label>
+            </div>
+            <div class="search-button col s2">
+              <%= f.submit 'Buscar', class: 'btn sucess-btn' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <% if !@users.any? %>
+      <div class="empty-list">
+        <h4><i class="material-icons">info_outline</i> Ops, ainda não temos nada aqui.</h4>
+      </div>
+    <% end %>
+    <% @users.find_each do |user| %>
+    <div class="col s12 m6">
+      <div class="card card-medium user-card">
+        <div class="card-title">
+          <p class="title-name"><%= link_to user.name, user_path(user) %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

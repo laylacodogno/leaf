@@ -1,0 +1,80 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea.materialize-textarea {
+  overflow-y: auto;
+  height: auto;
+  min-height: 130px;
+  max-height: none;
+}
+
+.select-wrapper + label {
+  top: 10px;
+}
+
+.input-field.col .dropdown-content [type="checkbox"] + label {
+  top: 25px;
+}
+
+.btn-remove {
+  padding: 0 15px;
+  max-width: 100%;
+  background-color: red;
+}
+
+.btn-remove:hover {
+  background-color: red;
+}
+
+.btn-add {
+  padding: 0 15px;
+  max-width: 100%;
+}
+
+#ingredients {
+  border: 1px dashed $primary-color;
+  padding: 10px 15px;
+  margin: 15px auto;
+}
+
+.card-medium.card-book {
+  background: url('pattern_card_880.png');
+  padding-left: 6%;
+
+  h5.subtitle {
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .recipe-info {
+    text-align: center;
+    padding: 10px;
+
+    > .material-icons {
+      font-size: 40px;
+      color: #979797;
+    }
+
+    > .label {
+      font-size: 10px;
+      color: #979797;
+      margin: 0;
+    }
+
+    > .info {
+      margin: 0;
+    }
+  }
+
+  .recipe-ingredients {
+    .ingredients-list {
+      li.ingredient {
+        list-style: circle;
+        line-height: 25px;
+      }
+    }
+  }
+}

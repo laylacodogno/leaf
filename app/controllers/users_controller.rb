@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy]
   before_action :set_edit_user, only: [:edit, :update]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :index, :new, :destroy]
 
   # GET /users/1
   def show
+    @recipes = Recipe.where(user_id: params[:id])
   end
 
   # GET /users/1/edit
@@ -26,7 +27,6 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-  # @user = User.find(params[:id])
   @user.destroy
   respond_to do |format|
     format.html { redirect_to users_url, notice: 'Usuário excluido com sucesso!' }

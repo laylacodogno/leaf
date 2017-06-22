@@ -1,0 +1,21 @@
+<div class="ingredients-attr">
+  <div class="input-field col s6 m6">
+    <%= f.select :ingredient_id, @ingredients.map{ |c| [c.name, c.id] }, prompt: 'Escolha uma opção', label: false, id: 'ingredient_id' %>
+    <label for="ingredient_id">Ingrediente</label>
+  </div>
+
+  <div class="input-field col s2 m2">
+    <%= f.number_field :amount,  id: 'amount' %>
+    <label for="amount">Quantidade</label>
+  </div>
+
+  <div class="input-field col s3 m3">
+    <%= f.select :measurement_unit_id, @measurement_units.map{ |c| [c.name, c.id] }, prompt: 'Escolha uma opção', label: false, id: 'measurement_unit_id' %>
+    <label for="measurement_unit_id">Unidade</label>
+  </div>
+
+  <div class="input-field col s1">
+    <%= f.hidden_field :_destroy %>
+    <%= link_to '<i class="material-icons">remove</i>'.html_safe, '#', class: "waves-effect waves-light btn btn-remove" %>
+  </div>
+</div>

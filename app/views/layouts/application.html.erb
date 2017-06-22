@@ -17,7 +17,8 @@
       <li><%= link_to 'Perfil', current_user %></li>
       <li><%= link_to 'Ingredientes', ingredients_path %></li>
       <li><%= link_to 'Categorias', categories_path %></li>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+      <li><%= link_to 'Receitas', recipes_path %></li>
+      <li class="nav-logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
     <% else %>
       <li><%= link_to('Login', new_user_session_path)  %></li>
     <% end %>
@@ -25,24 +26,19 @@
     <nav class="nav-primary">
     <div class="nav-wrapper container" >
       <%= link_to '', root_path, class: 'brand-logo' %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down navbar-links">
-      <li>
-        <form class="row navbar-search">
-        <div class="input-field col s12">
-          <input id="search" type="search" required>
-        </div>
-        <button class="btn-search" type="submit" name="action"></button>
-        </form>
-      </li>
-      <li>
-        <a class="dropdown-button link-dropdown" href="#!" data-activates="nav-user"><i class="ic-user"></i></a>
-      </li>
+      <ul id="nav-mobile" class="right navbar-links">
+        <li>
+          <a class="dropdown-button link-dropdown" href="#!" data-activates="nav-user"><i class="ic-user"></i></a>
+        </li>
       </ul>
     </div>
     </nav>
     <nav class="nav-secondary">
     <div class="nav-wrapper container">
-      <ul class="left hide-on-med-and-down navbar-links">
+      <ul class="left navbar-links">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Categorias', search_by_categories_path %></li>
+        <li><%= link_to 'Cadernos', search_by_users_path %></li>
       </ul>
     </div>
     </nav>

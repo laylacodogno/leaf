@@ -20,7 +20,7 @@
       <tr>
         <td><%= category.name %></td>
         <td class="taction"><%= link_to 'Editar', edit_category_path(category), class: 'btn-action primary-btn' %></td>
-        <td class="taction"><%= link_to 'Excluir', category, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="taction"><%= link_to 'Excluir', category, class: 'btn-action danger-btn', method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
       <% end %>
     </tbody>
