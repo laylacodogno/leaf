@@ -124,23 +124,23 @@ begin
 
 		MeasurementUnit.create(
 			name: 'Unidade',
-			measurement_unit: MeasurementUnit.new
+			superior_measurement_unit: MeasurementUnit.new
 		)
 		measurement_unit_kg = MeasurementUnit.create(
 			name: 'Kg',
-			measurement_unit: MeasurementUnit.new
+			superior_measurement_unit: MeasurementUnit.new
 		)
 		measurement_unit_g = MeasurementUnit.create(
 			name: 'g',
-			measurement_unit: measurement_unit_kg
+			superior_measurement_unit: measurement_unit_kg
 		)
 		measurement_unit_l = MeasurementUnit.create(
 			name: 'L',
-			measurement_unit: MeasurementUnit.new
+			superior_measurement_unit: MeasurementUnit.new
 		)
 		measurement_unit_ml = MeasurementUnit.create(
 			name: 'ml',
-			measurement_unit: measurement_unit_l
+			superior_measurement_unit: measurement_unit_l
 		)
 
 		MeasurementUnitConversion.create(
